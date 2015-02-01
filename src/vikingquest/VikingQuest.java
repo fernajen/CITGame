@@ -1,15 +1,21 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ *This is the main function of VikingQuest
  */
 package vikingquest;
 
+//Import class statements
+import byui.cit260.vikingQuest.model.Backpack;
+import byui.cit260.vikingQuest.model.Characters;
 import byui.cit260.vikingQuest.model.Game;
+import byui.cit260.vikingQuest.model.Items;
+import byui.cit260.vikingQuest.model.Location;
+import byui.cit260.vikingQuest.model.Map;
+import byui.cit260.vikingQuest.model.Player;
+import byui.cit260.vikingQuest.model.Scene;
+import byui.cit260.vikingQuest.model.Skills;
 
 /**
- *
- * @author Amy
+ * @author Amy, Jennifer and Ivy
  */
 public class VikingQuest {
 
@@ -18,6 +24,7 @@ public class VikingQuest {
      */
     public static void main(String[] args) {
         
+        //Game class functions
         Game gameOne = new Game();
         
         gameOne.setName("Fred Flinstone");
@@ -26,6 +33,29 @@ public class VikingQuest {
         String gameInfo = gameOne.toString();
         System.out.println(gameInfo);
         
+        //Player functions
+        Player playerOne = new Player();
+        
+        //Map calss functions
+        Map mapOne = new Map();
+        
+        //Backpack Class Functions
+        Backpack backpackOne = new Backpack();
+        
+        //Skills Class Functions
+        Skills skillsOne = new Skills();
+        
+        //Characters Functions
+        Characters charactersOne = new Characters();
+        
+        //Items Functions
+        Items itemsOne = new Items();
+        
+        //Location Functions
+        Location locationOne = new Location();
+        
+        //Scene Functions
+        Scene sceneOne = new Scene();
         
     }
     
