@@ -10,5 +10,16 @@ package byui.cit260.vikingQuest.control;
  * @author Amy
  */
 public class interactWithCharacter {
+        public static void main(){
     
+    //Declare variables
+    int a, b, answer;
+    
+    //Placeholder values
+    a = 3;
+    b = 4;
+    answer = (a + b);
+    
+    System.out.println(answer);
+    }
 }
