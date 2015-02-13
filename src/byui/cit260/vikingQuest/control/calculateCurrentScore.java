@@ -22,7 +22,7 @@ public class calculateCurrentScore {
         totalPoints = lastScore + pointsThisSession;
         
         //Display current total points
-        System.out.println("Your current Score is: 10050");
+        System.out.println("Your current Score is: " + totalPoints);
         
     }
 }
