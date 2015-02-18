@@ -25,6 +25,7 @@ public class VikingQuest {
      */
     public static void main(String[] args) {
          // Start program view layer
+        
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.startProgram();
         //Game class functions
