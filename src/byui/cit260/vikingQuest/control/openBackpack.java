@@ -9,7 +9,7 @@ package byui.cit260.vikingQuest.control;
  *
  * @author Amy
  */
-public class openBackpack {
+/*public class openBackpack {
     
     var addItem;
 	int selectItem;
@@ -27,3 +27,4 @@ public class openBackpack {
 		}
     
 }
+*/

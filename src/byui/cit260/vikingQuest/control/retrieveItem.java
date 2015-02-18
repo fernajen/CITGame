@@ -8,7 +8,7 @@ package byui.cit260.vikingQuest.control;
 /**
  *
  * @author Amy
- */
+ *//*
 public class retrieveItem {
     var rope = itemName 
 		if (itemName = rope){
@@ -25,3 +25,4 @@ public class retrieveItem {
 		}
     
 }
+*/
