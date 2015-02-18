@@ -4,6 +4,7 @@
 package vikingquest;
 
 //Import class statements
+import byui.cit.vikingQuest.view.StartProgramView;
 import byui.cit260.vikingQuest.model.Backpack;
 import byui.cit260.vikingQuest.model.Characters;
 import byui.cit260.vikingQuest.model.Game;
@@ -23,7 +24,9 @@ public class VikingQuest {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+         // Start program view layer
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.startProgram();
         //Game class functions
         Game gameOne = new Game();
         
