@@ -9,22 +9,12 @@ package byui.cit260.vikingQuest.control;
  *
  * @author Amy
  */
-/*public class openBackpack {
-    
-    var addItem;
-	int selectItem;
-		if (addItem > 1 || <15) {
-			return true;
-			addItem += 1;
-			addItem ++;
-			selectNumber = addItem;
-			
-			for (selectNumber = 0; selectNumber <15 item.int; int++) {
-				returm true;
-				new item += item[selectItem] + "<br>";
-				System.out.println("Item added!")
-			}
-		}
-    
+public class openBackpack {
+    public static void main(String args[]){
+        boolean y, n;
+        y = true;
+        n = false;
+        System.out.println("y" + "Open Backpack");
+        System.out.println("n" + "Close Backpack");
+    } 
 }
-*/
