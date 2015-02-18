@@ -9,6 +9,21 @@ package byui.cit260.vikingQuest.control;
  *
  * @author Amy
  */
-public class closeBackpack {
+public class closeBackpack {   
+    public static void main (String arg[]){
+    int closeTheBackpack, thisIsClosed;
+    closeTheBackpack = 1;
+    thisIsClosed =0;
+    
+    
+   
+    if ((closeTheBackpack + thisIsClosed)<= closeTheBackpack){
+    closeTheBackpack =(closeTheBackpack + thisIsClosed);
+    System.out.println("You have closed the backpack.");
+    
+}
+    
+        
+}
     
 }
