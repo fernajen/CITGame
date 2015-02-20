@@ -37,6 +37,7 @@ public class VikingQuest {
          // Start program view layer
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.startProgram();
+        
     } 
     
 }
