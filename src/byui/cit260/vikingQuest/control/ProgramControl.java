@@ -6,6 +6,7 @@
 package byui.cit260.vikingQuest.control;
 
 import byui.cit260.vikingQuest.model.Player;
+import vikingquest.VikingQuest;
 
 /**
  *
@@ -13,10 +14,17 @@ import byui.cit260.vikingQuest.model.Player;
  */
 public class ProgramControl {
 
-    public static Player createPlayer(String playersName) {
-        System.out.println("\n**** createPlayer function call ****"); 
-      
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public static Player createPlayer(String name){
+        
+        if (name == null){
+            return null;
+        }
+        
+        Player player = new Player();
+        player.setName(name);
+        
+       VikingQuest.setPlayer(player); // save the player
+        
+        return player;
     }
-    
 }

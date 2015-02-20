@@ -7,8 +7,8 @@
 
 package byui.cit.vikingQuest.view;
 
-// import byui.cit260.vikingQuest.control.ProgramControl;
-//import byui.cit260.vikingQuest.model.Player;
+import byui.cit260.vikingQuest.control.ProgramControl;
+import byui.cit260.vikingQuest.model.Player;
 import java.util.Scanner;
 
 
@@ -25,8 +25,15 @@ public class StartProgramView {
     public void startProgram(){
             //Display Banner
             this.displayBanner();
+            
             //Prompt player for name and save it
             String playersName = this.getPlayersName();
+            
+            //Create and save player object
+            Player player = ProgramControl.createPlayer(playersName);
+            
+            //Display a personalized welcome message
+            this.displayWelcomeMessage(player);
     }
     private void displayBanner(){
         
@@ -61,7 +68,15 @@ public class StartProgramView {
             }
             return playersName; //return the name                
             }
-    }   
+
+    private void displayWelcomeMessage(Player player) {
+        
+        System.out.println("\n\n=================================================");
+        System.out.println("\tWelcome To Viking Quest" + player.getName());
+        System.out.println("\tEnjoy! And good luck!");
+        System.out.println("======================================================");   
+    }
+}   
 /***********
  * I commented these out because I didn't know how to use them,
  * but I didn't want you to loose your work.
@@ -70,11 +85,4 @@ public class StartProgramView {
       Player player = ProgramControl.createPlayer(playersName);
       this.displayWelcomeMessage(player);
 
-*    private void displayWelcomeMessage(Player player) {
-*        System.out.println("\n\n=================================================");
-*        System.out.println("\tWelcome To Viking Quest" + player.getName());
-*        System.out.println("\tEnjoy! And good luck!");
-*        System.out.println("======================================================");
-*        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-*    }
-***********************/
+*/
