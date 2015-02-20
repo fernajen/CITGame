@@ -16,6 +16,10 @@ public class ProgramControl {
 
     public static Player createPlayer(String name){
         
+        // Placeholder
+        System.out.println("\n*** createPlayer function called ***");
+        
+        // Function
         if (name == null){
             return null;
         }
@@ -23,7 +27,7 @@ public class ProgramControl {
         Player player = new Player();
         player.setName(name);
         
-       VikingQuest.setPlayer(player); // save the player
+        VikingQuest.setPlayer(player); // save the player
         
         return player;
     }

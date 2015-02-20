@@ -5,24 +5,17 @@ package vikingquest;
 
 //Import class statements
 
-import byui.cit.vikingQuest.view.StartProgramView;
+import byui.cit260.vikingQuest.view.StartProgramView;
+import byui.cit260.vikingQuest.model.Backpack;
+import byui.cit260.vikingQuest.model.Characters;
+import byui.cit260.vikingQuest.model.Game;
+import byui.cit260.vikingQuest.model.Items;
+import byui.cit260.vikingQuest.model.Location;
+import byui.cit260.vikingQuest.model.Map;
+import byui.cit260.vikingQuest.model.Player;
+import byui.cit260.vikingQuest.model.Scene;
+import byui.cit260.vikingQuest.model.Skills;
 
-/*****
-* I commented these out because 
-* They all had an alert next to them saying
-* that they are unused.
-* 
-*import byui.cit.vikingQuest.view.StartProgramView;
-*import byui.cit260.vikingQuest.model.Backpack;
-*import byui.cit260.vikingQuest.model.Characters;
-*import byui.cit260.vikingQuest.model.Game;
-*import byui.cit260.vikingQuest.model.Items;
-*import byui.cit260.vikingQuest.model.Location;
-*import byui.cit260.vikingQuest.model.Map;
-*import byui.cit260.vikingQuest.model.Player;
-*import byui.cit260.vikingQuest.model.Scene;
-*import byui.cit260.vikingQuest.model.Skills;
-*******/
 
 /**
  * @author Amy, Jennifer and Ivy
@@ -33,8 +26,32 @@ public class VikingQuest {
      * @param args the command line arguments
      */
     
+    //Class instance Variables
+    private static Game currentGame = null;
+    private static Player player = null;
+    
+    //Getter and Setter functions
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        VikingQuest.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        VikingQuest.player = player;
+    }
+    
+    
+    
     public static void main(String[] args) {
-         // Start program view layer
+         
+        // Start program view layer
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.startProgram();
         

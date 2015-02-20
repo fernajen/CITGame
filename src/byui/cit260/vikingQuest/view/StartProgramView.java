@@ -5,7 +5,7 @@
  */
 
 
-package byui.cit.vikingQuest.view;
+package byui.cit260.vikingQuest.view;
 
 import byui.cit260.vikingQuest.control.ProgramControl;
 import byui.cit260.vikingQuest.model.Player;
@@ -34,6 +34,10 @@ public class StartProgramView {
             
             //Display a personalized welcome message
             this.displayWelcomeMessage(player);
+            
+            //Display the Main Menu
+            MainMenuView mainMenuView = new MainMenuView();
+            mainMenuView.displayMenu;
     }
     private void displayBanner(){
         
@@ -76,13 +80,4 @@ public class StartProgramView {
         System.out.println("\tEnjoy! And good luck!");
         System.out.println("======================================================");   
     }
-}   
-/***********
- * I commented these out because I didn't know how to use them,
- * but I didn't want you to loose your work.
- * 
- 
-      Player player = ProgramControl.createPlayer(playersName);
-      this.displayWelcomeMessage(player);
-
-*/
+}  
