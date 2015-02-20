@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.vikingQuest.control;
+//package byui.cit260.vikingQuest.control;
 
 import byui.cit260.vikingQuest.model.Player;
 import vikingquest.VikingQuest;
@@ -12,7 +12,7 @@ import vikingquest.VikingQuest;
  *
  * @author Jenny
  */
-public class ProgramControl {
+/*public class ProgramControl {
 
     public static Player createPlayer(String name){
         
@@ -32,3 +32,4 @@ public class ProgramControl {
         return player;
     }
 }
+*/
