@@ -76,7 +76,17 @@ public class MainMenuView {
     }
     
     private void startExistingGame() {
+        
+        //Placeholder mark begining of function call
         System.out.println("*** StartExistingGame function called ***");
+        
+        //Create New Game
+        GameControl.createNewGame(VikingQuest.getPlayer());
+        
+        //Display the game menu
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenu();
+        
     }
     
     private void saveGame() {
