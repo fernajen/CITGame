@@ -4,16 +4,25 @@
 package vikingquest;
 
 //Import class statements
+
 import byui.cit.vikingQuest.view.StartProgramView;
-import byui.cit260.vikingQuest.model.Backpack;
-import byui.cit260.vikingQuest.model.Characters;
-import byui.cit260.vikingQuest.model.Game;
-import byui.cit260.vikingQuest.model.Items;
-import byui.cit260.vikingQuest.model.Location;
-import byui.cit260.vikingQuest.model.Map;
-import byui.cit260.vikingQuest.model.Player;
-import byui.cit260.vikingQuest.model.Scene;
-import byui.cit260.vikingQuest.model.Skills;
+
+/*****
+* I commented these out because 
+* They all had an alert next to them saying
+* that they are unused.
+* 
+*import byui.cit.vikingQuest.view.StartProgramView;
+*import byui.cit260.vikingQuest.model.Backpack;
+*import byui.cit260.vikingQuest.model.Characters;
+*import byui.cit260.vikingQuest.model.Game;
+*import byui.cit260.vikingQuest.model.Items;
+*import byui.cit260.vikingQuest.model.Location;
+*import byui.cit260.vikingQuest.model.Map;
+*import byui.cit260.vikingQuest.model.Player;
+*import byui.cit260.vikingQuest.model.Scene;
+*import byui.cit260.vikingQuest.model.Skills;
+*******/
 
 /**
  * @author Amy, Jennifer and Ivy
@@ -23,44 +32,46 @@ public class VikingQuest {
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String[] args) {
          // Start program view layer
-        
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.startProgram();
-        //Game class functions
-        Game gameOne = new Game();
-        
-        gameOne.setName("Fred Flinstone");
-        gameOne.setBestTime(7.00);
-        
-        String gameInfo = gameOne.toString();
-        System.out.println(gameInfo);
-        
-        //Player functions
-        Player playerOne = new Player();
-        
-        //Map calss functions
-        Map mapOne = new Map();
-        
-        //Backpack Class Functions
-        Backpack backpackOne = new Backpack();
-        
-        //Skills Class Functions
-        Skills skillsOne = new Skills();
-        
-        //Characters Functions
-        Characters charactersOne = new Characters();
-        
-        //Items Functions
-        Items itemsOne = new Items();
-        
-        //Location Functions
-        Location locationOne = new Location();
-        
-        //Scene Functions
-        Scene sceneOne = new Scene();
-        
-    }
+    } 
     
 }
+/************************
+ * I edited these out for now
+ * Page 6 of the Lesson 6 Team Assignment doc 
+ * says to "Delete any existing code currently in this function
+ * before adding this weeks code here.
+ * 
+ *        //Game class functions
+ 8        
+ *      //Player functions
+ *      Player playerOne = new Player();
+ *       
+ *       //Map class functions
+ *       Map mapOne = new Map();
+ *       
+ *       //Backpack Class Functions
+ *       Backpack backpackOne = new Backpack();
+ *       
+ *       //Skills Class Functions
+ *       Skills skillsOne = new Skills();
+ *       
+ *       //Characters Functions
+ *       Characters charactersOne = new Characters();
+ *       
+ *       //Items Functions
+ *       Items itemsOne = new Items();
+ *       
+ *       //Location Functions
+ *       Location locationOne = new Location();
+ *       
+ *       //Scene Functions
+ *       Scene sceneOne = new Scene();
+ *       
+ *   }
+ *   
+ ******************/
