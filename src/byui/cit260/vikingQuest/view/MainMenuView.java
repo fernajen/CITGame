@@ -18,24 +18,35 @@ import vikingquest.VikingQuest;
 public class MainMenuView {
      
     private final String MENU = "\n"
-    + "\n---------------------"
-    + "\n| Main Menu         |"
-    + "\n---------------------"
-    + "\nG - Start Game"
-    + "\nH - Get help on how to play the game"
-    + "\nS - Save Game"
-    + "\nE - Exit"
-    + "\n---------------------";
+        + "\n---------------------"
+        + "\n|     Main Menu     |"
+        + "\n---------------------"
+        + "\nG - Start Game"
+        + "\nH - Get help on how to play the game"
+        + "\nS - Save Game"
+        + "\nE - Exit"
+        + "\n---------------------";
     
-    void displayMenu() {
+    public void displayMenu() {
         
         //Placeholder function to show function call
         System.out.println("*** MainMenuView.displayMenu() function called ***");
         
+        char selection = ' ';
+        do {
+            System.out.println(MENU); //Display the main menu
+            
+        String input = this.getInput(); // Get user selection
+        selection = input.charAt(0);
+        
+        this.doAction(selection);  //Do action selected
+        
+        }
+        while (selection != 'E'); // A selection is not Exit
         
     }
 
-    private String getInput(char choice) {
+    private String getInput() {
         
         //Ask for and recieve user name input Placeholder
         System.out.println("\n*** The user input is requested and stored. ***");
@@ -61,6 +72,7 @@ public class MainMenuView {
                 break;
         }
     }
+    
     
     private void startNewGame() {
         
@@ -97,4 +109,5 @@ public class MainMenuView {
         System.out.println("*** displayHelpMenu function called ***");
     } 
 }
+
     

@@ -41,10 +41,7 @@ public class StartProgramView {
     }
     private void displayBanner(){
         
-        System.out.println("*                             *"
-                        + "\n* Welcome To Viking Quest!!! *"
-                        + "\n* In this game you will hunt *"
-                        + "\n* for a Viking mound with treasure!*");
+        System.out.println(" " + "\n***  Viking Quest ***");
     }
     public String getPlayersName(){
             boolean valid = false;// indicates whether name has been retrived.
@@ -54,13 +51,11 @@ public class StartProgramView {
             while(!valid){// while invalid name has not been retrived.
                 
                 //prompt for player's name
-                System.out.println("Enter the player's name below:");
+                System.out.println("Enter the your name below: \n");
                 
                 //get the name from the keyboard trim off blank spaces
                 playersName = keyboard.nextLine();
                 playersName = playersName.trim();
-                
-                System.out.println("Welcome " + playersName + "!\n");
                 
                 //if the name is invalid (less than 2 char in length)
                 if(playersName.length()<2){
@@ -75,9 +70,12 @@ public class StartProgramView {
 
     private void displayWelcomeMessage(Player player) {
         
-        System.out.println("\n\n=================================================");
-        System.out.println("\tWelcome To Viking Quest" + player.getName());
-        System.out.println("\tEnjoy! And good luck!");
-        System.out.println("======================================================");   
+        System.out.println("\n=================================================");
+        System.out.println("\n");
+        System.out.println("\t  Welcome To Viking Quest " + player.getName() + "!");
+        System.out.println("\n");
+        System.out.println("\t  Enjoy And Good Luck!");
+        System.out.println("\n================================================="); 
+        System.out.println("\n");
     }
 }  
