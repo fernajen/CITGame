@@ -47,10 +47,54 @@ public class MainMenu {
               }
               While (selection !=E);
           }
+          public void doAction(char choice) {
+              switch (choice) {
+                  case "N": //create and start a new game
+                      this.startNewGame();
+                      break;
+                  case "G": //get and start an existing game
+                      this.startExistingGame();
+                      break;
+                  case "H": // display help menu 
+                      this.getHelpMenu();
+                      break;
+                  case "S": // save game
+                      this.saveGame();
+                      break;
+                  case "E": // exit program
+                      return;
+                  default:
+                      System.out.println("\n*** Invalid selection *** please, try again");
+                      break;
+              }
+                     
+          }
                   
 
         void MainMenuView() {
             System.out.println("*** MainMenuView.displayMenu() function called ***");
+        }
+
+        private void startNewGame() {
+            //create new game
+            GameControl.createNewGame(vikingQuest.getPlayer());
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        private void startExistingGame() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        private void getHelpMenu() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        private void saveGame() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        private String getInput() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
     }
 }
