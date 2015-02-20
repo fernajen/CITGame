@@ -7,7 +7,6 @@ package byui.cit260.vikingQuest.view;
 
 // Import Directories
 import byui.cit260.vikingQuest.control.GameControl;
-import java.util.Scanner;
 import vikingquest.VikingQuest;
 
 /**
@@ -28,24 +27,20 @@ public class MainMenuView {
     + "\nE - Exit"
     + "\n---------------------";
     
-    void displayMenu(){
+    void displayMenu() {
         
-        //Placeholder call function alert
+        //Placeholder function to show function call
         System.out.println("*** MainMenuView.displayMenu() function called ***");
+        
         
     }
 
     private String getInput(char choice) {
-        Scanner choice = new Scanner(System.in);
         
-        //Ask for user input and store it
-        String user_input;
-        System.out.print("Please select an option: ");
-        user_input = choice.next();
-        
-        //Return user input
-        return user_input; 
-        
+        //Ask for and recieve user name input Placeholder
+        System.out.println("\n*** The user input is requested and stored. ***");
+      
+        return null;
     }
     
     public void doAction(char choice) {
@@ -90,6 +85,6 @@ public class MainMenuView {
     
     private void displayHelpMenu() {
         System.out.println("*** displayHelpMenu function called ***");
-    }    
+    } 
 }
     
