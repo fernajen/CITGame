@@ -30,6 +30,10 @@ public class StartProgramView {
             
             // Create and save player object
             Player player = ProgramControl.createPlayer(playersName);
+            
+            // Display the main menu
+            MainMenuView mainMenu = new mainMenuView();
+            mainMenu.displayMenu();
     }
     private void displayBanner(){
         
@@ -64,6 +68,8 @@ public class StartProgramView {
             }
             return playersName; //return the name                
             }
+
+  
     }   
 
  I commented these out because I didn't know how to use them,
