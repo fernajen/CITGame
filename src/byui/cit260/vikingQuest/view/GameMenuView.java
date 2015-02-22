@@ -13,6 +13,6 @@ public class GameMenuView {
     
     //Placeholder Function
     void displayMenu(){
-        System.out.println("\n*** displayMenu stub function called ***");
+        System.out.println("\n*** GameMenu.displayMenu stub function called ***");
     }
 }

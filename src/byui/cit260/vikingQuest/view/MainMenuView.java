@@ -7,6 +7,7 @@ package byui.cit260.vikingQuest.view;
 
 // Import Directories
 import byui.cit260.vikingQuest.control.GameControl;
+import java.util.Scanner;
 import vikingquest.VikingQuest;
 
 /**
@@ -17,6 +18,7 @@ import vikingquest.VikingQuest;
 
 public class MainMenuView {
      
+    //MENU - called in public void displayMenu()
     private final String MENU = "\n"
         + "\n---------------------"
         + "\n|     Main Menu     |"
@@ -28,28 +30,47 @@ public class MainMenuView {
         + "\n---------------------";
     
     public void displayMenu() {
-        
-        //Placeholder function to show function call
-        System.out.println("*** MainMenuView.displayMenu() function called ***");
+
         
         char selection = ' ';
         do {
             System.out.println(MENU); //Display the main menu
             
-        String input = this.getInput(); // Get user selection
-        selection = input.charAt(0);
+            String input = this.getInput(); // Get user selection
+            selection = input.charAt(0);
         
-        this.doAction(selection);  //Do action selected
+            this.doAction(selection);  //Do action selected
         
-        }
-        while (selection != 'E'); // A selection is not Exit
+        } while (selection != 'E'); // A selection is not Exit
         
     }
 
     private String getInput() {
+        boolean valid = false;// indicates whether name has been retrived.
+        String selection = null;
+        Scanner keyboard = new Scanner(System.in);// keyboard input stream
         
         //Ask for and recieve user name input Placeholder
         System.out.println("\n*** The user input is requested and stored. ***");
+        
+        while(!valid){
+                
+            //prompt user for input
+            System.out.println("Enter the letter of your selection: \n");
+            
+            //get the name from the keyboard trim off blank spaces
+            selection = keyboard.nextLine();
+            selection = selection.trim();
+                
+            //if the input is invalid send out error message
+            if(selection.length()>=2){
+                System.out.println("Invalid entry - Please Select a letter.");
+                continue; // and repeat again
+                   
+            }
+            break; // out of the (exit) the repitition.
+            
+        }
       
         return null;
     }
