@@ -13,9 +13,18 @@ import byui.cit260.vikingQuest.model.Player;
  */
 public class GameControl {
     
-    public static void createNewGame(Player player) {
+    /**
+     *
+     * @param player
+     * @return
+     */
+    public static int createNewGame(Player player) {
         
         //Placeholder Function
         System.out.println("\n*** createNewGame stub function called ***");
+        int numPlayer;
+        numPlayer = 1;
+        
+        return numPlayer;
     }
 }

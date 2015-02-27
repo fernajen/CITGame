@@ -47,33 +47,29 @@ public class MainMenuView {
     }
 
     private String getInput() {
+        Scanner keyboard = new Scanner(System.in);// keyboard input stream
         boolean valid = false;// indicates whether name has been retrived.
         String selection = null;
-        Scanner keyboard = new Scanner(System.in);// keyboard input stream
         
-        //Ask for and recieve user name input Placeholder
-        System.out.println("\n*** The user input is requested and stored. ***");
+        //prompt user for input
+        System.out.println("Enter the letter of your selection: \n");
         
         while(!valid){
-                
-            //prompt user for input
-            System.out.println("Enter the letter of your selection: \n");
             
             //get the name from the keyboard trim off blank spaces
             selection = keyboard.nextLine();
             selection = selection.trim();
                 
             //if the input is invalid send out error message
-            if(selection.length()>=2){
+            if(selection.length()< 1){ // blank value entered
                 System.out.println("Invalid entry - Please Select a letter.");
-                continue; // and repeat again
-                   
+                continue; // and repeat again   
             }
             break; // out of the (exit) the repitition.
             
         }
       
-        return null;
+        return selection;
     }
     
     public void doAction(char choice) {
@@ -102,7 +98,10 @@ public class MainMenuView {
         System.out.println("*** startNewGame function called ***");
         
         //Create New Game
-        GameControl.createNewGame(VikingQuest.getPlayer());
+        int value = GameControl.createNewGame(VikingQuest.getPlayer());
+        if (value < 0) {
+            System.out.println("Error - Failed to create new game");
+        }
         
         //Display the game menu
         GameMenuView gameMenu = new GameMenuView();
