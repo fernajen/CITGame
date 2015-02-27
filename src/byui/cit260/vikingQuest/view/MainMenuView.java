@@ -129,7 +129,22 @@ public class MainMenuView {
     }
     
     private void displayHelpMenu() {
-        System.out.println("*** displayHelpMenu function called ***");
+        
+        System.out.println("\n ======================================================");
+        System.out.println("\t             Main Help Menu");
+        System.out.println("\n                                    ");
+        System.out.println("\n To begin your adventure, follow these simple steps:");
+        System.out.println("\n ======================================================");
+        System.out.println("\n First, select 'N' from the main menu above");
+        System.out.println("\n tis will start a new game.");
+        System.out.println("\n                                    ");
+        System.out.println("\n If you want to continue with an existing game, ");
+        System.out.println("\n select 'G' from the Main Menu.");
+        System.out.println("\n                                            ");
+        System.out.println("\n If you need help throught your game, you can always ");
+        System.out.println("\n select the Game menu 'Help', which can provide you ");
+        System.out.println("\n with more specific instructions.");
+        System.out.println("\n ======================================================");
     } 
 }
 
