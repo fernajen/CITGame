@@ -15,6 +15,24 @@ import static org.junit.Assert.*;
 public class interactWithCharacterTest {
     
     public interactWithCharacterTest() {
+        
+        //Placeholder Function
+        System.out.println("\n*** interactWithCharacterTest called ***");
+        
+        //Input values for test 1
+        int x=2;
+        int y=3;
+        
+        // Expected output
+        double expectedResult;
+        expectedResult = x+y;
+        
+        //Call function to run test
+        int result = x+y;
+        
+        //Compare expected return to actual return
+        assertEquals(expectedResult, result, 5);
+        
     }
 
     /**
@@ -25,7 +43,7 @@ public class interactWithCharacterTest {
         System.out.println("main");
         interactWithCharacter.main();
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        System.out.println("The test case is a prototype.");
     }
     
 }

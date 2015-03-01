@@ -16,11 +16,17 @@ public class calculateCurrentScoreTest {
     
     public calculateCurrentScoreTest() {
     }
-
+    
     /**
-     * Test of main method, of class calculateCurrentScore.
-     */
+    * Test of main method, of class calculateCurrentScore.
+    */
     @Test
+    
+    /**********************************
+    *Test case #1
+    *************/
+    
+    
     public void testMain() {
         System.out.println("main");
         String[] args = null;

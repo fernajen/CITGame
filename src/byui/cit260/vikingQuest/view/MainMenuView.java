@@ -131,7 +131,7 @@ public class MainMenuView {
     private void displayHelpMenu() {
         
         System.out.println("\n ======================================================");
-        System.out.println("\t             Main Help Menu");
+        System.out.println("\t             Main Help Menu                  ");
         System.out.println("\n                                    ");
         System.out.println("\n To begin your adventure, follow these simple steps:");
         System.out.println("\n ======================================================");
