@@ -152,8 +152,6 @@ public class GameMenuView {
         
         MainMenuView mainMenu = new MainMenuView();
         mainMenu.displayMenu();
-        /***Display the game menu -- Template
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();***/
+
     } 
 }
