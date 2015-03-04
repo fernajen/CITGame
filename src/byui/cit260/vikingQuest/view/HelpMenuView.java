@@ -11,22 +11,16 @@ import java.util.Scanner;
  *
  * @author Amy
  */
-public class GameMenuView {
-        
-    //Game Menu
+public class HelpMenuView {
+    //Help Menu
     private final String GAMEMENU = "\n"
         + "\n---------------------"
-        + "\n|     Game Menu     |"
+        + "\n|     Help Menu     |"
         + "\n---------------------"
-        + "\nV - View Map"
-        + "\nB - Backpack"
-        + "\nT - Talk to someone"
-        + "\nG - Give Item"
-        + "\nI - Item Recieved"
-        + "\nH - Help"
-        + "\nM - Main Menu"
+        + "\nL - Read Letter"
+        + "\nC - Clue"
+        + "\nG - Game Menu"
         + "\n---------------------";
-    
     public void displayMenu() {
 
         
@@ -43,7 +37,6 @@ public class GameMenuView {
         } while (selection != 'E'); // A selection is not Exit
         
     }
-
     private String getInput() {
         boolean valid = false;// indicates whether name has been retrived.
         String selection = null;
@@ -76,26 +69,14 @@ public class GameMenuView {
     
     public void doAction(char choice) {
         switch (choice) {
-            case 'V': // View Map
-                this.viewMap();
+            case 'L': // Read Letter
+                this.readLetter();
                 break;
-            case 'B': // Backpack
-                this.viewBackpack();
+            case 'C': // Clue
+                this.seeClue();
                 break;
-            case 'T': // Talk to someone
-                this.talk();
-                break;
-            case 'G': // Give Item
-                this.giveItem();
-                return;
-            case 'I': // Item (Received)
-                this.itemRecieved();
-                return;
-            case 'H': // Item (Received)
-                this.displayHelpMenu();
-                return;
-            case 'M': // Exit to Main Menu
-                this.returnToMain();
+            case 'G': // Exit to Main Menu
+                this.returnToGameMenu();
                 return;
             default:
                 System.out.println("\n*** Invalid Selection *** Try Again");
@@ -103,58 +84,23 @@ public class GameMenuView {
         }
     }
     
-    
-    public void viewMap() {
+        private void readLetter() {
         
-        //Placeholder Comment
-        System.out.println("*** viewMap() function is called ***");
-            
-        // This link isnt working
+        System.out.println("*** seeLetter() function called ***");
+    }
+        
+        private void seeClue() {
+        
+        System.out.println("*** seeClue() function called ***");
+    }
+    
+    private void returnToGameMenu() {
+        
+        System.out.println("*** returnToGameMenu() function called ***");
         
         //Display the game menu
-        MapMenuView mapMenu = new MapMenuView();
-        mapMenu.map();
-        
-    }
-    
-    private void viewBackpack() {
-        
-        //Placeholder mark begining of function call
-        System.out.println("*** viewBackpack() function called ***");
-        
-    }
-    
-    private void talk() {
-        
-        System.out.println("*** talk() function called ***");
-    }
-    
-    private void giveItem() {
-        
-        System.out.println("*** giveItem()displayHelpMenu function called ***");
-    } 
-    
-    private void itemRecieved() {
-        
-        System.out.println("*** itemRecieved()displayHelpMenu function called ***");
-    } 
-    
-    private void displayHelpMenu(){
-        
-        System.out.println("*** displayHelpMenu() function called ***");
-        
-        //Display the game menu
-        HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayMenu();
-
-    } 
-    
-    private void returnToMain() {
-        
-        System.out.println("*** returnToMainMenu() function called ***");
-        
-        MainMenuView mainMenu = new MainMenuView();
-        mainMenu.displayMenu();
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenu();
 
     } 
 }
