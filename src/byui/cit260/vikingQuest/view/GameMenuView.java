@@ -116,9 +116,6 @@ public class GameMenuView {
         //Display the game menu
         MapMenuView mapMenu = new MapMenuView();
         mapMenu.map();
-        /***Display the game menu -- Template
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();***/
         
     }
     
@@ -152,5 +149,11 @@ public class GameMenuView {
     private void returnToMain() {
         
         System.out.println("*** returnToMainMenu() function called ***");
+        
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.displayMenu();
+        /***Display the game menu -- Template
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenu();***/
     } 
 }
