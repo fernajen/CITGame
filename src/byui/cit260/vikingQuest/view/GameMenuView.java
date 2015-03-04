@@ -5,7 +5,9 @@
  */
 package byui.cit260.vikingQuest.view;
 
+import byui.cit260.vikingQuest.control.GameControl;
 import java.util.Scanner;
+import vikingquest.VikingQuest;
 
 /**
  *
@@ -104,10 +106,19 @@ public class GameMenuView {
     }
     
     
-    private void viewMap() {
+    public void viewMap() {
         
         //Placeholder Comment
         System.out.println("*** viewMap() function is called ***");
+            
+        // This link isnt working
+        
+        //Display the game menu
+        MapMenuView mapMenu = new MapMenuView();
+        mapMenu.map();
+        /***Display the game menu -- Template
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenu();***/
         
     }
     

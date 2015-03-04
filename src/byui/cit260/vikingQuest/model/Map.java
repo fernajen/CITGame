@@ -16,27 +16,6 @@ public class Map implements Serializable{
     private String entireMap;
     private String locationsInMap;
     
-    //Default Constructor
-    public Map() {
-    }
-    
-    
-    // Getter and Setter
-    public String getEntireMap() {
-        return entireMap;
-    }
-
-    public void setEntireMap(String entireMap) {
-        this.entireMap = entireMap;
-    }
-
-    public String getLocationsInMap() {
-        return locationsInMap;
-    }
-
-    public void setLocationsInMap(String locationsInMap) {
-        this.locationsInMap = locationsInMap;
-    }
     
     // ToString, equals, hashCode
     @Override
