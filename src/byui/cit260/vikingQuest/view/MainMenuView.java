@@ -16,7 +16,7 @@ import vikingquest.VikingQuest;
  */
 
 
-public class MainMenuView {
+public class MainMenuView extends View{
      
     //MENU - called in public void displayMenu()
     private final String MENU = "\n"
@@ -29,7 +29,48 @@ public class MainMenuView {
         + "\nS - Save Game"
         + "\nE - Exit"
         + "\n---------------------";
-    
+    public abstract class View implements ViewInterface{
+        private String promptMessage;
+
+        public String getPromptMessage() {
+            return promptMessage;
+        }
+
+        public void setPromptMessage(String promptMessage) {
+            this.promptMessage = promptMessage;
+        }
+        @Override
+        public void display(){
+            String value;
+            do{
+                System.out.println(this.promptMessage); // display prompt
+                value = this.getInput(); //get the user's input
+                this.doAction(value); //do action based on selection
+            }
+            while(!value.equals("E"));
+            }
+        @Override
+        public String getInput(){
+            Scanner keyboard = new Scanner(System.in);
+            boolean valid = false;
+            String selection = null;
+            //while a valid name hasn't been inputed
+            while(!valid){
+                //prompt for player's name
+                System.out.println("\t\Enter your selection below");
+                //get the value entered via keyboard
+                selection = keyboard.nextLine();
+                selection = selection.trim();
+                
+                if (selection.length()<1){//blank value entered
+                    System.out.println("\n*** Invalid selection ***try again")
+                            continue;
+                }
+                break;
+            }
+            return selection;
+        }
+        }
     public void displayMenu() {
 
         
@@ -45,7 +86,7 @@ public class MainMenuView {
         } while (selection != 'E'); // A selection is not Exit
         
     }
-
+    
     private String getInput() {
         Scanner keyboard = new Scanner(System.in);// keyboard input stream
         boolean valid = false;// indicates whether name has been retrived.
