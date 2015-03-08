@@ -16,7 +16,7 @@ public abstract class View implements ViewInterface {
     private String promptMessage;
     
     public View(String promptMessage){
-        
+        this.promptMessage = promptMessage;
     }
     
     @Override

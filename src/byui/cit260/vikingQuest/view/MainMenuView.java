@@ -16,10 +16,10 @@ import vikingquest.VikingQuest;
  */
 
 
-public class MainMenuView {
-     
-    //MENU - called in public void displayMenu()
-    private final String MENU = "\n"
+public class MainMenuView extends View{
+    
+    public MainMenuView(){
+        super("\n"
         + "\n---------------------"
         + "\n|     Main Menu     |"
         + "\n---------------------"
@@ -28,48 +28,7 @@ public class MainMenuView {
         + "\nH - Get help on how to play the game"
         + "\nS - Save Game"
         + "\nE - Exit"
-        + "\n---------------------";
-    
-    public void display() {
-
-        
-        char selection = ' ';
-        do {
-            System.out.println(MENU); //Display the main menu
-            
-            String input = this.getInput(); // Get user selection
-            selection = input.charAt(0);
-        
-            this.doAction(selection);  //Do action selected
-        
-        } while (selection != 'E'); // A selection is not Exit
-        
-    }
-
-    private String getInput() {
-        Scanner keyboard = new Scanner(System.in);// keyboard input stream
-        boolean valid = false;// indicates whether name has been retrived.
-        String selection = null;
-        
-        //prompt user for input
-        System.out.println("Enter the letter of your selection: \n");
-        
-        while(!valid){
-            
-            //get the name from the keyboard trim off blank spaces
-            selection = keyboard.nextLine();
-            selection = selection.trim();
-                
-            //if the input is invalid send out error message
-            if(selection.length()< 1){ // blank value entered
-                System.out.println("Invalid entry - Please Select a letter.");
-                continue; // and repeat again   
-            }
-            break; // out of the (exit) the repitition.
-            
-        }
-      
-        return selection;
+        + "\n---------------------");
     }
     
     public void doAction(char choice) {
@@ -146,6 +105,11 @@ public class MainMenuView {
         System.out.println("\n with more specific instructions.");
         System.out.println("\n ======================================================");
     } 
+
+    @Override
+    public void doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
 
     
