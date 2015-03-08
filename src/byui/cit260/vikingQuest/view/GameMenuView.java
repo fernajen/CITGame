@@ -13,67 +13,22 @@ import vikingquest.VikingQuest;
  *
  * @author Amy
  */
-public class GameMenuView {
+public class GameMenuView extends View{
         
     //Game Menu
-    private final String MENU = "\n"
-        + "\n---------------------"
-        + "\n|     Game Menu     |"
-        + "\n---------------------"
-        + "\nV - View Map"
-        + "\nB - Backpack"
-        + "\nT - Talk to someone"
-        + "\nG - Give Item"
-        + "\nI - Item Recieved"
-        + "\nH - Help"
-        + "\nM - Main Menu"
-        + "\n---------------------";
-    
-    public void display() {
-
-        
-        char selection = ' ';
-        do {
-            System.out.println(MENU); //Display the main menu
-            
-            String input = this.getInput(); // Get user selection
-            
-            selection = input.charAt(0);
-        
-            this.doAction(selection);  //Do action selected
-        
-        } while (selection != 'E'); // A selection is not Exit
-        
-    }
-
-    private String getInput() {
-        boolean valid = false;// indicates whether name has been retrived.
-        String selection = null;
-        Scanner keyboard = new Scanner(System.in);// keyboard input stream
-        
-        //Ask for and recieve user name input Placeholder
-        System.out.println("\n*** The user input is requested and stored. ***");
-        
-        while(!valid){
-                
-            //prompt user for input
-            System.out.println("Enter the letter of your selection: \n");
-            
-            //get the name from the keyboard trim off blank spaces
-            selection = keyboard.nextLine();
-            selection = selection.trim();
-                
-            //if the input is invalid send out error message
-            if(selection.length()>=2){
-                System.out.println("Invalid entry - Please Select a letter.");
-                continue; // and repeat again
-                   
-            }
-            break; // out of the (exit) the repitition.
-            
-        }
-      
-        return selection;
+    public GameMenuView(){
+        super("\n"
+            + "\n---------------------"
+            + "\n|     Game Menu     |"
+            + "\n---------------------"
+            + "\nV - View Map"
+            + "\nB - Backpack"
+            + "\nT - Talk to someone"
+            + "\nG - Give Item"
+            + "\nI - Item Recieved"
+            + "\nH - Help"
+            + "\nM - Main Menu"
+            + "\n---------------------");
     }
     
     public void doAction(char choice) {
@@ -157,4 +112,9 @@ public class GameMenuView {
         mainMenu.display();
 
     } 
+
+    @Override
+    public void doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
