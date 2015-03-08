@@ -29,7 +29,25 @@ public class MainMenuView extends View{
         + "\nS - Save Game"
         + "\nE - Exit"
         + "\n---------------------";
+    public void displayMenu(){
+        char selection =' ';
+        do{
+            System.out.println(MENU); //Display main menu
+            
+            String input = this.getInput(); //get the user's input
+            selection = input.charAt(0); // get first character of string
+            
+            this.doAction(selection); // do action based on selection
+            
+        }
+        while (selection != 'E'); // Not exit
+    }
+    
+
+  
     public abstract class View implements ViewInterface{
+       
+        
         private String promptMessage;
 
         public String getPromptMessage() {
@@ -87,7 +105,7 @@ public class MainMenuView extends View{
         
     }
     
-    private String getInput() {
+   /* private String getInput() {
         Scanner keyboard = new Scanner(System.in);// keyboard input stream
         boolean valid = false;// indicates whether name has been retrived.
         String selection = null;
@@ -111,7 +129,7 @@ public class MainMenuView extends View{
         }
       
         return selection;
-    }
+    }*/
     
     public void doAction(char choice) {
         switch (choice) {
