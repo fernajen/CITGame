@@ -5,16 +5,15 @@
  */
 package byui.cit260.vikingQuest.view;
 
-import java.util.Scanner;
-
 /**
  *
  * @author Amy
  */
-public class MapMenuView {
+public class MapMenuView extends View{
     
     // Map Menu
-    private final String MENU = "\n"
+    public MapMenuView(){
+        super("\n"
         + "\n---------------------"
         + "\n|     MAP Menu     |"
         + "\n---------------------"
@@ -24,56 +23,11 @@ public class MapMenuView {
         + "\nT - Temple Ruins"
         + "\nS - Shipwreak"
         + "\nG - Game Menu"
-        + "\n---------------------";
-    
-    //Default Constructor
-    public void map() {
-        
-        char selection = ' ';
-        do {
-            
-        System.out.println(MENU); //Display the main menu
-        
-        String input = this.getInput(); // Get user selection
-            
-        selection = input.charAt(0);
-        
-        this.doAction(selection);  //Do action selected
-        
-        }while (selection != 'E'); // A selection is not Exit
+        + "\n---------------------");
     }
+
     
-        private String getInput() {
-        boolean valid = false;// indicates whether name has been retrived.
-        String selection = null;
-        Scanner keyboard = new Scanner(System.in);// keyboard input stream
-        
-        //Ask for and recieve user name input Placeholder
-        System.out.println("\n*** The user input is requested and stored. ***");
-        
-        while(!valid){
-                
-            //prompt user for input
-            System.out.println("Enter the letter of your selection: \n");
-            
-            //get the name from the keyboard trim off blank spaces
-            selection = keyboard.nextLine();
-            selection = selection.trim();
-                
-            //if the input is invalid send out error message
-            if(selection.length()>=2){
-                System.out.println("Invalid entry - Please Select a letter.");
-                continue; // and repeat again
-                   
-            }
-            break; // out of the (exit) the repitition.
-            
-        }
-      
-        return selection;
-    }
-    
-            public void doAction(char choice) {
+    public void doAction(char choice) {
         switch (choice) {
             case 'J': // Jungle
                 this.goToJungle();
@@ -140,6 +94,11 @@ public class MapMenuView {
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
         
+    }
+
+    @Override
+    public void doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

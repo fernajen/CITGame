@@ -5,44 +5,47 @@
  */
 package byui.cit260.vikingQuest.view;
 
-// Import Directories
-import byui.cit260.vikingQuest.control.GameControl;
-import java.util.Scanner;
-import vikingquest.VikingQuest;
-
 /**
  *
  * @author Amy
  */
-
-
 public class MainMenuView extends View{
     
+    // Map Menu
     public MainMenuView(){
         super("\n"
         + "\n---------------------"
-        + "\n|     Main Menu     |"
+        + "\n|     MAP Menu     |"
         + "\n---------------------"
-        + "\nN - Start New Game"
-        + "\nG - Continue Existing Game"
-        + "\nH - Get help on how to play the game"
-        + "\nS - Save Game"
-        + "\nE - Exit"
+        + "\nJ - Jungle"
+        + "\nM - Mountain"
+        + "\nP - Mountain Pass"
+        + "\nT - Temple Ruins"
+        + "\nS - Shipwreak"
+        + "\nG - Game Menu"
         + "\n---------------------");
     }
+
     
     public void doAction(char choice) {
         switch (choice) {
-            case 'N': // will create a new game
-                this.startNewGame();
+            case 'J': // Jungle
+                this.goToJungle();
                 break;
-            case 'G': // will start an existing game
-                this.startExistingGame();
+            case 'M': // Mountain
+                this.goToMountain();
                 break;
-            case 'H': // display help menu
-                this.displayHelpMenu();
+            case 'P': // Mountain Pass
+                this.goToMountainPass();
                 break;
-            case 'E': // Exit Program
+            case 'T': // Temple Ruins
+                this.goToTempleRuins();
+                return;
+            case 'S': // Shipwreak
+                this.goToShipwreak();
+                return;
+            case 'G': // Game Menu
+                this.displayGameMenu();
                 return;
             default:
                 System.out.println("\n*** Invalid Selection *** Try Again");
@@ -50,66 +53,52 @@ public class MainMenuView extends View{
         }
     }
     
-    
-    private void startNewGame() {
+    private void goToJungle() {
         
         //Placeholder Comment
-        System.out.println("*** startNewGame function called ***");
+        System.out.println("*** goToJungle() function is called ***");
         
-        //Create New Game
-        int value = GameControl.createNewGame(VikingQuest.getPlayer());
-        if (value < 0) {
-            System.out.println("Error - Failed to create new game");
-        }
+    }
+    
+    private void goToMountain() {
+        
+        //Placeholder Comment
+        System.out.println("*** goToMountain() function is called ***");
+        
+    }
+    
+    private void goToMountainPass() {
+        
+        //Placeholder Comment
+        System.out.println("*** goToMountainPass function is called ***");
+        
+    }
+    private void goToTempleRuins() {
+        
+        //Placeholder Comment
+        System.out.println("*** goToTempleRuins() function is called ***");
+        
+    }
+    private void goToShipwreak() {
+        
+        //Placeholder Comment
+        System.out.println("*** goToShipwreak() function is called ***");
+        
+    }
+    private void displayGameMenu() {
+        
+        //Placeholder Comment
+        System.out.println("*** displayGameMenu() function is called ***");
         
         //Display the game menu
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
-    }
-    
-    private void startExistingGame() {
-        
-        //Placeholder mark begining of function call
-        System.out.println("*** StartExistingGame function called ***");
-        
-        //Create New Game
-        GameControl.createNewGame(VikingQuest.getPlayer());
-        
-        //Display the game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.display();
         
     }
-    
-    private void saveGame() {
-        // Save Game
 
-        System.out.println("*** saveGame function called ***");
-    }
-    
-    private void displayHelpMenu() {
-        
-        System.out.println("\n ======================================================");
-        System.out.println("\t             Main Help Menu                  ");
-        System.out.println("\n                                    ");
-        System.out.println("\n To begin your adventure, follow these simple steps:");
-        System.out.println("\n ======================================================");
-        System.out.println("\n First, select 'N' from the main menu above");
-        System.out.println("\n tis will start a new game.");
-        System.out.println("\n                                    ");
-        System.out.println("\n If you want to continue with an existing game, ");
-        System.out.println("\n select 'G' from the Main Menu.");
-        System.out.println("\n                                            ");
-        System.out.println("\n If you need help throught your game, you can always ");
-        System.out.println("\n select the Game menu 'Help', which can provide you ");
-        System.out.println("\n with more specific instructions.");
-        System.out.println("\n ======================================================");
-    } 
-
-    @Override
     public void doAction(String value) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-}
 
+}
     

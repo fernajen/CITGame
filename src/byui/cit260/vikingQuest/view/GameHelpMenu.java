@@ -50,7 +50,6 @@ public class GameHelpMenu extends View{
         
         //Display the game menu
         MapMenuView mapMenu = new MapMenuView();
-        mapMenu.map();
         
     }
     

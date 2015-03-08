@@ -4,15 +4,14 @@
  * and open the template in the editor.
  */
 package byui.cit260.vikingQuest.view;
-import byui.cit260.vikingQuest.control.GameControl;
-import vikingquest.VikingQuest;
 
 /**
  *
  * @author Amy
  */
 public class GetHelp extends View{
-    private final String MENU = "\n"
+    public GetHelp(){
+        super ("\n"
             + "\n-------------------------"
             + "\n|        Help Menu      |"
             + "\n-------------------------"
@@ -20,7 +19,8 @@ public class GetHelp extends View{
             + "\nM - How to move"
             + "\nH - How to use your items"
             + "\nQ - Quit Help"
-            + "\n---------------------------";
+            + "\n---------------------------");
+    }
 
     public GetHelp(String promptMessage) {
         super(promptMessage);
@@ -49,26 +49,11 @@ public class GetHelp extends View{
         this.displayHelp();
     }
 
-    private void displayHelp() {
-        
-        //Display Help placeholder
-        System.out.println("*                       *"
-                            + "\n* Help menu will display here.*");
-        char selection = ' ';
-        do {
-            System.out.println(MENU); //Display the main menu
-            
-        String input = this.getInput(); // Get user selection
-        selection = input.charAt(0);
-        
-        this.getHelp(selection);  //Do action selected
-        
-        }
-        while (selection != 'Q'); // A selection is not Exit
+    public void doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public void doAction(String value) {
+    private void displayHelp() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
