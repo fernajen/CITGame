@@ -19,11 +19,18 @@ public class GameHelpMenu extends View{
             + "\n---------------------"
             + "\nR - Read Letter"
             + "\nH - Hint"
-            + "\nG - Game Menu"
+            + "\nQ - Quit Game Help"
             + "\n---------------------");
     }
     
-    public void doAction(char choice) {
+    @Override
+    public void doAction(Object obj) {
+        
+        String value = (String)obj;
+        
+        value = value.toUpperCase(); // convert all input to uppercase
+        char choice = value.charAt(0); // get first character
+        
         switch (choice) {
             case 'R': // Read letter
                 this.readLetter();
@@ -31,7 +38,7 @@ public class GameHelpMenu extends View{
             case 'H': // Hint
                 this.hint();
                 break;
-            case 'G': // Exit to Main Menu
+            case 'Q': // Exit to Main Menu
                 this.returnToGameMenu();
                 return;
             default:
@@ -43,14 +50,9 @@ public class GameHelpMenu extends View{
     
     public void viewMap() {
         
-        //Placeholder Comment
-        System.out.println("*** viewMap() function is called ***");
-            
-        // This link isnt working
-        
         //Display the game menu
         MapMenuView mapMenu = new MapMenuView();
-        
+        mapMenu.display();
     }
     
     private void readLetter() {
@@ -67,17 +69,10 @@ public class GameHelpMenu extends View{
    
     private void returnToGameMenu() {
         
-        System.out.println("*** returnToGameMenu() function called ***");
-        
         //Display the game menu
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
 
     } 
-
-    @Override
-    public void doAction(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
 

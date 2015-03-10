@@ -13,6 +13,7 @@ public class MapMenuView extends View{
     
     // Map Menu
     public MapMenuView(){
+        
         super("\n"
         + "\n---------------------"
         + "\n|     MAP Menu     |"
@@ -22,12 +23,18 @@ public class MapMenuView extends View{
         + "\nP - Mountain Pass"
         + "\nT - Temple Ruins"
         + "\nS - Shipwreak"
-        + "\nG - Game Menu"
+        + "\nQ - Quit Map"
         + "\n---------------------");
     }
 
-    
-    public void doAction(char choice) {
+    @Override
+    public void doAction(Object obj) {
+        
+        String value = (String)obj;
+        
+        value = value.toUpperCase(); // convert all input to uppercase
+        char choice = value.charAt(0); // get first character entered
+        
         switch (choice) {
             case 'J': // Jungle
                 this.goToJungle();
@@ -44,7 +51,7 @@ public class MapMenuView extends View{
             case 'S': // Shipwreak
                 this.goToShipwreak();
                 return;
-            case 'G': // Game Menu
+            case 'Q': // Game Menu
                 this.displayGameMenu();
                 return;
             default:
@@ -86,19 +93,10 @@ public class MapMenuView extends View{
         
     }
     private void displayGameMenu() {
-        
-        //Placeholder Comment
-        System.out.println("*** displayGameMenu() function is called ***");
-        
         //Display the game menu
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
         
-    }
-
-    @Override
-    public void doAction(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

@@ -5,18 +5,17 @@
  */
 package byui.cit260.vikingQuest.view;
 
-import byui.cit260.vikingQuest.control.GameControl;
-import java.util.Scanner;
-import vikingquest.VikingQuest;
-
 /**
  *
  * @author Amy
  */
-public class GameMenuView {
+
+public class GameMenuView extends View{
         
     //Game Menu
-    private final String MENU = "\n"
+    public GameMenuView(){
+        
+        super ("\n"
         + "\n---------------------"
         + "\n|     Game Menu     |"
         + "\n---------------------"
@@ -26,57 +25,18 @@ public class GameMenuView {
         + "\nG - Give Item"
         + "\nI - Item Recieved"
         + "\nH - Help"
-        + "\nM - Main Menu"
-        + "\n---------------------";
-    
-    public void display() {
-
-        
-        char selection = ' ';
-        do {
-            System.out.println(MENU); //Display the main menu
-            
-            String input = this.getInput(); // Get user selection
-            
-            selection = input.charAt(0);
-        
-            this.doAction(selection);  //Do action selected
-        
-        } while (selection != 'E'); // A selection is not Exit
-        
-    }
-
-    private String getInput() {
-        boolean valid = false;// indicates whether name has been retrived.
-        String selection = null;
-        Scanner keyboard = new Scanner(System.in);// keyboard input stream
-        
-        //Ask for and recieve user name input Placeholder
-        System.out.println("\n*** The user input is requested and stored. ***");
-        
-        while(!valid){
-                
-            //prompt user for input
-            System.out.println("Enter the letter of your selection: \n");
-            
-            //get the name from the keyboard trim off blank spaces
-            selection = keyboard.nextLine();
-            selection = selection.trim();
-                
-            //if the input is invalid send out error message
-            if(selection.length()>=2){
-                System.out.println("Invalid entry - Please Select a letter.");
-                continue; // and repeat again
-                   
-            }
-            break; // out of the (exit) the repitition.
-            
-        }
-      
-        return selection;
+        + "\nQ - Quit Game Menu"
+        + "\n---------------------");
     }
     
-    public void doAction(char choice) {
+    @Override
+    public void doAction(Object obj) {
+        
+        String value = (String)obj;
+        
+        value = value.toUpperCase(); // convert all input to uppercase
+        char choice = value.charAt(0); // get first character
+        
         switch (choice) {
             case 'V': // View Map
                 this.viewMap();
@@ -96,7 +56,7 @@ public class GameMenuView {
             case 'H': // Item (Received)
                 this.displayHelpMenu();
                 return;
-            case 'M': // Exit to Main Menu
+            case 'Q': // Exit to Main Menu
                 this.returnToMain();
                 return;
             default:
@@ -104,17 +64,11 @@ public class GameMenuView {
                 break;
         }
     }
-    
-    
-    public void viewMap() {
-        
-        //Placeholder Comment
-        System.out.println("*** viewMap() function is called ***");
-            
-        // This link isnt working
-        
+     
+    public void viewMap() {        
         //Display the game menu
         MapMenuView mapMenu = new MapMenuView();
+        mapMenu.display();
         
     }
     
@@ -140,20 +94,16 @@ public class GameMenuView {
         System.out.println("*** itemRecieved()displayHelpMenu function called ***");
     } 
     
-    private void displayHelpMenu(){
-        
-        System.out.println("*** displayHelpMenu() function called ***");
-        
+    private void displayHelpMenu(){   
         GameHelpMenu gameHelpMenu = new GameHelpMenu();
         gameHelpMenu.display();
+        
     } 
     
-    private void returnToMain() {
-        
-        System.out.println("*** returnToMainMenu() function called ***");
-        
+    private void returnToMain() { 
         MainMenuView mainMenu = new MainMenuView();
         mainMenu.display();
 
     } 
+
 }

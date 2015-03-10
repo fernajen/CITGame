@@ -9,96 +9,66 @@ package byui.cit260.vikingQuest.view;
  *
  * @author Amy
  */
+
 public class MainMenuView extends View{
     
-    // Map Menu
+    // Main Menu
     public MainMenuView(){
-        super("\n"
+        
+        super ("\n"
         + "\n---------------------"
-        + "\n|     MAP Menu     |"
+        + "\n|     Main Menu     |"
         + "\n---------------------"
-        + "\nJ - Jungle"
-        + "\nM - Mountain"
-        + "\nP - Mountain Pass"
-        + "\nT - Temple Ruins"
-        + "\nS - Shipwreak"
-        + "\nG - Game Menu"
+        + "\nN - Start New Game"
+        + "\nG - Continue Existing Game"
+        + "\nH - Get help on how to play the game"
+        + "\nS - Save Game"
+        + "\nE - Exit"
         + "\n---------------------");
     }
 
-    
-    public void doAction(char choice) {
-        switch (choice) {
-            case 'J': // Jungle
-                this.goToJungle();
+    @Override
+    public void doAction(Object obj) {
+        
+        String value = (String)obj;
+        
+        value = value.toUpperCase(); // convert all input to uppercase
+        char choice = value.charAt(0); // get first character entered
+        
+        switch(choice) {
+            case 'N': // will create a new game
+                this.startNewGame();
                 break;
-            case 'M': // Mountain
-                this.goToMountain();
+            case 'G': // will start an existing game
+                this.startExistingGame();
                 break;
-            case 'P': // Mountain Pass
-                this.goToMountainPass();
+            case 'H': // display help menu
+                this.displayHelpMenu();
                 break;
-            case 'T': // Temple Ruins
-                this.goToTempleRuins();
-                return;
-            case 'S': // Shipwreak
-                this.goToShipwreak();
-                return;
-            case 'G': // Game Menu
-                this.displayGameMenu();
-                return;
+            case 'E': // Exit Program
+                System.out.println("Exit called");
+                break;
             default:
                 System.out.println("\n*** Invalid Selection *** Try Again");
                 break;
         }
     }
-    
-    private void goToJungle() {
-        
-        //Placeholder Comment
-        System.out.println("*** goToJungle() function is called ***");
-        
-    }
-    
-    private void goToMountain() {
-        
-        //Placeholder Comment
-        System.out.println("*** goToMountain() function is called ***");
-        
-    }
-    
-    private void goToMountainPass() {
-        
-        //Placeholder Comment
-        System.out.println("*** goToMountainPass function is called ***");
-        
-    }
-    private void goToTempleRuins() {
-        
-        //Placeholder Comment
-        System.out.println("*** goToTempleRuins() function is called ***");
-        
-    }
-    private void goToShipwreak() {
-        
-        //Placeholder Comment
-        System.out.println("*** goToShipwreak() function is called ***");
-        
-    }
-    private void displayGameMenu() {
-        
-        //Placeholder Comment
-        System.out.println("*** displayGameMenu() function is called ***");
+
+    private void startNewGame() {
         
         //Display the game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.display();
-        
+        GameMenuView gameMenuView = new GameMenuView();
+        gameMenuView.display();
     }
 
-    public void doAction(String value) {
+    private void startExistingGame() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    private void displayHelpMenu() {
+        
+        //Display the Help menu
+        GetHelp getHelp = new GetHelp();
+        getHelp.display();
+    }
 }
-    
