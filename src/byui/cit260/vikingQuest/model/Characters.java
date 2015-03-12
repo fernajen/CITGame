@@ -11,16 +11,26 @@ import java.util.Objects;
  *
  * @author Amy, Jennifer, Ivey
  */
-public class Characters implements Serializable{
+public enum Characters implements Serializable{
     
+   Elf("Elf description here"),
+   Dwarf("Dwarf description here"),
+   Vampire("Vampire descrition here"),
+   Werewolf("Werewolf description here"),
+   Wizard("Wizard description here"),
+   Hawk("Hawk description here"),
+   Giant("Giant description here"),
+   BabyDragon("Baby Dragon description here");
+   
     //Class instance variables
-    private String ability;
-    private String name;
-    private String description;
+    private final String ability;
+    private final String description;
     
     //Default Constructor Function
 
-    public Characters() {
+    Characters(String description) {
+    this.description = description;
+    ability = new String ("The character can do this!");
     }
     
     
@@ -28,28 +38,15 @@ public class Characters implements Serializable{
     public String getAbility() {
         return ability;
     }
-
-    public void setAbility(String ability) {
-        this.ability = ability;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
+ 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+ 
     
     //toString, equals, hashCode functions
+    /*
 
     @Override
     public String toString() {
@@ -85,6 +82,6 @@ public class Characters implements Serializable{
         }
         return true;
     }
-    
+    */
     
 }
