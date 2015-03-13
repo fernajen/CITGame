@@ -19,7 +19,13 @@ public class GameControl {
      * @return
      */
     public static int createNewGame(Player player) {
+        Game game = new Game(); // create new game
+        VikingQuest.setCurrentGame(game); //save in viking quest
         
+        game.setPlayer(player); // save player in game
+        
+        ItemsInventory[] inventoryList = GameControl.createInventoryList();
+        game.setInventory(inventoryList);
         //Placeholder Function
         System.out.println("\n*** createNewGame stub function called ***");
         int numPlayer;

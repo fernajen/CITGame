@@ -9,158 +9,48 @@ package byui.cit260.vikingQuest.view;
  *
  * @author Amy
  */
-
-public class MainMenuView extends View{
+public class GetHelp extends View{
     
-    // Main Menu
-    public MainMenuView(){
-        
+    public GetHelp(){
         super ("\n"
-        + "\n---------------------"
-        + "\n|     Main Menu     |"
-        + "\n---------------------"
-        + "\nN - Start New Game"
-        + "\nG - Continue Existing Game"
-        + "\nH - Get help on how to play the game"
-        + "\nS - Save Game"
-        + "\nE - Exit"
-        + "\n---------------------";
-    public void displayMenu(){
-        char selection =' ';
-        do{
-            System.out.println(MENU); //Display main menu
-            
-            String input = this.getInput(); //get the user's input
-            selection = input.charAt(0); // get first character of string
-            
-            this.doAction(selection); // do action based on selection
-            
-        }
-        while (selection != 'E'); // Not exit
+            + "\n-------------------------"
+            + "\n|        Help Menu      |"
+            + "\n-------------------------"
+            + "\nG - Learn the goal of the game"
+            + "\nM - How to move"
+            + "\nH - How to use your items"
+            + "\nQ - Quit Help"
+            + "\n---------------------------");
     }
-    
-
   
-    public abstract class View implements ViewInterface{
-       
-        
-        private String promptMessage;
-
-        public String getPromptMessage() {
-            return promptMessage;
-        }
-
-        public void setPromptMessage(String promptMessage) {
-            this.promptMessage = promptMessage;
-        }
-        @Override
-        public void display(){
-            String value;
-            do{
-                System.out.println(this.promptMessage); // display prompt
-                value = this.getInput(); //get the user's input
-                this.doAction(value); //do action based on selection
-            }
-            while(!value.equals("E"));
-            }
-        @Override
-        public String getInput(){
-            Scanner keyboard = new Scanner(System.in);
-            boolean valid = false;
-            String selection = null;
-            //while a valid name hasn't been inputed
-            while(!valid){
-                //prompt for player's name
-                System.out.println("\t\Enter your selection below");
-                //get the value entered via keyboard
-                selection = keyboard.nextLine();
-                selection = selection.trim();
-                
-                if (selection.length()<1){//blank value entered
-                    System.out.println("\n*** Invalid selection ***try again")
-                            continue;
-                }
-                break;
-            }
-            return selection;
-        }
-        }
-    public void displayMenu() {
-
-        
-        char selection = ' ';
-        do {
-            System.out.println(MENU); //Display the main menu
-            
-            String input = this.getInput(); // Get user selection
-            selection = input.charAt(0);
-        
-            this.doAction(selection);  //Do action selected
-        
-        } while (selection != 'E'); // A selection is not Exit
-        
-    }
-    
-   /* private String getInput() {
-        Scanner keyboard = new Scanner(System.in);// keyboard input stream
-        boolean valid = false;// indicates whether name has been retrived.
-        String selection = null;
+    @Override
+    public void doAction(Object obj){
         
         String value = (String)obj;
         
-        while(!valid){
-            
-            //get the name from the keyboard trim off blank spaces
-            selection = keyboard.nextLine();
-            selection = selection.trim();
+        value = value.toUpperCase(); // convert all input to uppercase
+        char choice = value.charAt(0); // get first character
+        
+        switch(choice){ 
+            case 'G': // This will teach you the goal of the game
+               System.out.println("\n*********************************");
+               System.out.println("\t Solve puzzles and collect items to");
+               System.out.println("\t travel to a lost Island and discover");
+               System.out.println("\t a Viking treasure.");
+               break;
+            case 'M': // Explains how to move
+                System.out.println("\n*** Explaination about how to move in the game ***");
+                break;
+            case 'H': // Eplains how to use the items
+                System.out.println("\n*** Explaination about how to use the items in the game ***");
+                break;
+            case 'Q': // leaves the help menu and returns to Main
                 
-            //if the input is invalid send out error message
-            if(selection.length()< 1){ // blank value entered
-                System.out.println("Invalid entry - Please Select a letter.");
-                continue; // and repeat again   
-            }
-            break; // out of the (exit) the repitition.
-            
-        }
-      
-        return selection;
-    }*/
-    
-    public void doAction(char choice) {
-        switch (choice) {
-            case 'N': // will create a new game
-                this.startNewGame();
-                break;
-            case 'G': // will start an existing game
-                this.startExistingGame();
-                break;
-            case 'H': // display help menu
-                this.displayHelpMenu();
-                break;
-            case 'E': // Exit Program
-                System.out.println("Exit called");
-                break;
+                MainMenuView mainMenu = new MainMenuView();
+                mainMenu.display();
             default:
                 System.out.println("\n*** Invalid Selection *** Try Again");
-                break;
+                break;        
         }
-    }
-
-    private void startNewGame() {
-        
-        //Display the game menu
-        GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.display();
-    }
-
-    private void startExistingGame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void displayHelpMenu() {
-        
-        //Display the Help menu
-        GetHelp getHelp = new GetHelp();
-        getHelp.display();
     }
 }

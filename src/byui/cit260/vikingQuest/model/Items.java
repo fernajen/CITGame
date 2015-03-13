@@ -47,6 +47,23 @@ public enum Items{
     rope.setRequiredAmount(0);
     inventory[Item.rope.ordinal()] = rope;
     
+      InventoryItem bowAndArrow = new ItemsInventory();
+  bowAndArrow.setDescription("bowAndArrow");
+  bowAndArrow.setQuantityInStock(0);
+   bowAndArrow.setRequiredAmount(0);
+    inventory[Item.bowAndArrow.ordinal()] = bowAndArrow;
+    
+     InventoryItem sword = new ItemsInventory();
+  sword.setDescription("sword");
+ sword.setQuantityInStock(0);
+   sword.setRequiredAmount(0);
+    inventory[Item.sword.ordinal()] = sword;
+     
+    InventoryItem walkingStick = new ItemsInventory();
+ walkingStick.setDescription("walkingStick");
+ walkingStick.setQuantityInStock(0);
+   walkingStick.setRequiredAmount(0);
+    inventory[Item.walkingStick.ordinal()] = walkingStick;
 } 
     
     // Class instance Variables
