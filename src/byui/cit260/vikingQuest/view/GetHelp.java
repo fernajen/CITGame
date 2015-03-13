@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package byui.cit260.vikingQuest.view;
+import byui.cit260.vikingQuest.control.GameControl;
+import java.util.Scanner;
+import vikingquest.VikingQuest;
 
 /**
  *
@@ -20,7 +23,19 @@ public class GetHelp extends View{
             + "\nM - How to move"
             + "\nH - How to use your items"
             + "\nQ - Quit Help"
-            + "\n---------------------------");
+            + "\n---------------------------";
+    public GetHelp(){
+        char selection = ' ';
+        do {
+            System.out.println(MENU); //display help menu
+            
+            String input = this.getInput(); // get input
+            
+            selection = input.charAt(0); //first line of character
+            this.doAction(selection); // action decided based on selection
+
+        }
+        while(selection != 'Q'); 
     }
   
     @Override
