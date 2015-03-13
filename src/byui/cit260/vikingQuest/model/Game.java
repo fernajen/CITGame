@@ -16,7 +16,7 @@ public class Game implements Serializable {
     
     // Class instance variables
     private String name;
-    private double bestTime;
+    private double bestTime[];
 
     public Game() {
     }

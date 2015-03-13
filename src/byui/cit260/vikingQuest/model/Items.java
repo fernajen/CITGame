@@ -11,7 +11,43 @@ import java.util.Objects;
  *
  * @author Amy, Jennifer, Ivey
  */
-public class Items implements Serializable{
+public enum Items{
+    flashlight,
+    waterBottle,
+    matches,
+    rope,
+    bowAndArrow,
+    sword,
+    walkingStick;
+   Public Static ItemsInventory[] create InventoryList {
+    ItemsInventory[] inventory =
+            new ItemsInventory[Constants.NUMBER_OF_INVENTORY_ITEMS];
+    
+    InventoryItem flashlight = new ItemsInventory();
+    flashlight.setDescription("flashlight");
+    flashlight.setQuantityInStock(0);
+    flashlight.setRequiredAmount(0);
+    inventory[Item.flashlight.ordinal()] = flashlight;
+    
+        InventoryItem waterBottle = new ItemsInventory();
+    waterBottle.setDescription("waterBottle");
+    waterBottle.setQuantityInStock(0);
+    waterBottle.setRequiredAmount(0);
+    inventory[Item.waterBottle.ordinal()] = waterBottle;
+    
+       InventoryItem matches = new ItemsInventory();
+    matches.setDescription("matches");
+    matches.setQuantityInStock(0);
+    matches.setRequiredAmount(0);
+    inventory[Item.matches.ordinal()] = matches;
+    
+      InventoryItem rope = new ItemsInventory();
+   rope.setDescription("rope");
+   rope.setQuantityInStock(0);
+    rope.setRequiredAmount(0);
+    inventory[Item.rope.ordinal()] = rope;
+    
+} 
     
     // Class instance Variables
     private String type;
