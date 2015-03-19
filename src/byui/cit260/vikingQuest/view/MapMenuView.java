@@ -18,10 +18,11 @@ public class MapMenuView extends View{
         + "\n---------------------"
         + "\n|     MAP Menu     |"
         + "\n---------------------"
+        + "\nT - Temple"
+        + "\nR - Ruins"
         + "\nJ - Jungle"
         + "\nM - Mountain"
         + "\nP - Mountain Pass"
-        + "\nT - Temple Ruins"
         + "\nS - Shipwreak"
         + "\nQ - Quit Map"
         + "\n---------------------");
@@ -36,21 +37,30 @@ public class MapMenuView extends View{
         char choice = value.charAt(0); // get first character entered
         
         switch (choice) {
+            case 'T': // Temple Ruins
+                this.goToTemple();
+                return;
+            case 'R': // Ruins
+                this.goToRuins();
+                return;
+            case 'V': // Mountain Pass
+                this.goToVikingMound();
+                break;
+            case 'M': // Mountains
+                this.goToMountains();
+                break;
+            case 'S': // Start
+                this.goToStart();
+                return;
+            case 'B': // Beach Town
+                this.goToBeachTown();
+                return;
+            case 'H': // Beach Town
+                this.goToHut();
+                return;
             case 'J': // Jungle
                 this.goToJungle();
                 break;
-            case 'M': // Mountain
-                this.goToMountain();
-                break;
-            case 'P': // Mountain Pass
-                this.goToMountainPass();
-                break;
-            case 'T': // Temple Ruins
-                this.goToTempleRuins();
-                return;
-            case 'S': // Shipwreak
-                this.goToShipwreak();
-                return;
             case 'Q': // Game Menu
                 this.displayGameMenu();
                 return;
@@ -60,39 +70,59 @@ public class MapMenuView extends View{
         }
     }
     
-    private void goToJungle() {
+    private void goToTemple() {
         
         //Placeholder Comment
-        System.out.println("*** goToJungle() function is called ***");
+        System.out.println("*** goToTemple() function is called ***");
         
     }
     
-    private void goToMountain() {
+    private void goToRuins() {
+        
+        //Placeholder Comment
+        System.out.println("*** goToRuins() function is called ***");
+        
+    }
+    
+    private void goToVikingMound() {
+        
+        //Placeholder Comment
+        System.out.println("*** goToVikingMound function is called ***");
+        
+    }
+    
+    private void goToMountains() {
         
         //Placeholder Comment
         System.out.println("*** goToMountain() function is called ***");
         
     }
     
-    private void goToMountainPass() {
+    private void goToStart() {
         
         //Placeholder Comment
-        System.out.println("*** goToMountainPass function is called ***");
+        System.out.println("*** goToStart() function is called ***");
         
     }
-    private void goToTempleRuins() {
+    
+    private void goToBeachTown(){
+        
+        System.out.println("***goTOBeachTown() function called***");
+    }
+    
+    private void goToHut(){
+        
+        System.out.println("***goToHut() function called***");
+    }
+    
+    private void goToJungle() {
         
         //Placeholder Comment
-        System.out.println("*** goToTempleRuins() function is called ***");
+        System.out.println("*** goToJungle() function is called ***");
         
     }
-    private void goToShipwreak() {
-        
-        //Placeholder Comment
-        System.out.println("*** goToShipwreak() function is called ***");
-        
-    }
-    private void displayGameMenu() {
+
+    private void displayGameMenu() { // Quit
         //Display the game menu
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
