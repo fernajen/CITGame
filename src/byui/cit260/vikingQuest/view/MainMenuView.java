@@ -1,56 +1,81 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.vikingQuest.view;
+
+import byui.cit260.vikingQuest.model.Game;
+import vikingquest.VikingQuest;
 
 /**
  *
  * @author Amy
  */
-public class GetHelp extends View{
+
+public class MainMenuView extends View{
     
-    public GetHelp(){
+    // Main Menu
+    public MainMenuView(){
+        
         super ("\n"
-            + "\n-------------------------"
-            + "\n|        Help Menu      |"
-            + "\n-------------------------"
-            + "\nG - Learn the goal of the game"
-            + "\nM - How to move"
-            + "\nH - How to use your items"
-            + "\nQ - Quit Help"
-            + "\n---------------------------");
+        + "\n---------------------"
+        + "\n|     Main Menu     |"
+        + "\n---------------------"
+        + "\nN - Start New Game"
+        + "\nG - Continue Existing Game"
+        + "\nH - Get help on how to play the game"
+        + "\nS - Save Game"
+        + "\nE - Exit"
+        + "\n---------------------");
     }
-  
+
     @Override
-    public void doAction(Object obj){
+    public void doAction(Object obj) {
         
         String value = (String)obj;
         
         value = value.toUpperCase(); // convert all input to uppercase
-        char choice = value.charAt(0); // get first character
+        char choice = value.charAt(0); // get first character entered
         
-        switch(choice){ 
-            case 'G': // This will teach you the goal of the game
-               System.out.println("\n*********************************");
-               System.out.println("\t Solve puzzles and collect items to");
-               System.out.println("\t travel to a lost Island and discover");
-               System.out.println("\t a Viking treasure.");
-               break;
-            case 'M': // Explains how to move
-                System.out.println("\n*** Explaination about how to move in the game ***");
+        switch(choice) {
+            case 'N': // will create a new game
+                this.startNewGame();
                 break;
-            case 'H': // Eplains how to use the items
-                System.out.println("\n*** Explaination about how to use the items in the game ***");
+            case 'G': // will start an existing game
+                this.startExistingGame();
                 break;
-            case 'Q': // leaves the help menu and returns to Main
-                
-                MainMenuView mainMenu = new MainMenuView();
-                mainMenu.display();
+            case 'H': // display help menu
+                this.displayHelpMenu();
+                break;
+            case 'E': // Exit Program
+                System.out.println("Exit called");
+                break;
+            case 'S': // Save Game
+                System.out.println("Save Game called");
+                this.saveGame();
+                break;
             default:
                 System.out.println("\n*** Invalid Selection *** Try Again");
-                break;        
+                break;
         }
+    }
+
+     private void startNewGame() {
+        // Create New Game
+        Game.createNewGame(VikingQuest.getPlayer());
+        //Display the game menu
+        GameMenuView gameMenuView = new GameMenuView();
+        gameMenuView.display();
+    }
+
+    private void startExistingGame() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void displayHelpMenu() {
+        
+        //Display the Help menu
+        GetHelp getHelp = new GetHelp();
+        getHelp.display();
+    }
+
+    private void saveGame() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
