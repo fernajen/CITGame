@@ -5,30 +5,38 @@
  */
 package byui.cit260.vikingQuest.model;
 
+import byui.cit260.vikingQuest.control.GameControl;
+import byui.cit260.vikingQuest.control.createInventoryList;
 import java.io.Serializable;
-import java.util.Objects;
 
 /**
  *
  * @author Amy
  */
 public class Game implements Serializable {
+
+    public static void createNewGame(Player player) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     // Class instance variables
-    private String name;
-    private double bestTime[];
-
+    private double totalTime;
+    private double bestTime;
+    private Player player;
+    private InventoryItem[] items;
+    private String[] characters;
+    private Backpack backpack;
+    private Map map;
+    
     public Game() {
     }
-    
-    
 
-    public String getName() {
-        return name;
+    public double getTotalTime() {
+        return totalTime;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTotalTime(double totalTime) {
+        this.totalTime = totalTime;
     }
 
     public double getBestTime() {
@@ -39,33 +47,45 @@ public class Game implements Serializable {
         this.bestTime = bestTime;
     }
 
-    @Override
-    public String toString() {
-        return "Game{" + "name=" + name + ", bestTime=" + bestTime + '}';
+    public Player getPlayer() {
+        return player;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 67 * hash + Objects.hashCode(this.name);
-        hash = 67 * hash + (int) (Double.doubleToLongBits(this.bestTime) ^ (Double.doubleToLongBits(this.bestTime) >>> 32));
-        return hash;
+    public void setPlayer(Player player) {
+        this.player = player;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Game other = (Game) obj;
-        return true;
+    public InventoryItem[] getItems() {
+        return items;
+    }
+
+    public void setItems(InventoryItem[] items) {
+        this.items = items;
+    }
+
+    public String[] getCharacters() {
+        return characters;
+    }
+
+    public void setCharacters(String[] characters) {
+        this.characters = characters;
+    }
+
+    public Backpack getBackpack() {
+        return backpack;
+    }
+
+    public void setBackpack(Backpack backpack) {
+        this.backpack = backpack;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
     }
     
-    
-    
-    
-    
+
 }
