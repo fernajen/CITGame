@@ -5,84 +5,55 @@
  */
 package byui.cit260.vikingQuest.model;
 import java.io.Serializable;
-import java.util.Objects;
+import java.util.ArrayList;
 /**
  *
  * @author Amy
  */
 public class Location implements Serializable{
     
-    // Calss Instance Variables
-    private String locationName;
-    private String scenesInLocation;
-    private String itemsInLocation;
+    private int row;
+    private int colum;
+    private boolean visited;
+    private Scene scene;
+    private ArrayList<Characters> characters;
     
     // Default Constructor
     public Location() {
     }
 
-    // Getter and Setter
-    public String getLocationName() {
-        return locationName;
+    void setColumn(int column) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public void setLocationName(String locationName) {
-        this.locationName = locationName;
+    void setRow(int row) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public String getScenesInLocation() {
-        return scenesInLocation;
+    void setVisited(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public void setScenesInLocation(String scenesInLocation) {
-        this.scenesInLocation = scenesInLocation;
+    public void setScene(Scene scene) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public String getItemsInLocation() {
-        return itemsInLocation;
+    public int getColum() {
+        return colum;
     }
 
-    public void setItemsInLocation(String itemsInLocation) {
-        this.itemsInLocation = itemsInLocation;
-    }
-    
-    //ToString, equals, hashCode
-    @Override
-    public String toString() {
-        return "Location{" + "locationName=" + locationName + ", scenesInLocation=" + scenesInLocation + ", itemsInLocation=" + itemsInLocation + '}';
+    public void setColum(int colum) {
+        this.colum = colum;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 79 * hash + Objects.hashCode(this.locationName);
-        hash = 79 * hash + Objects.hashCode(this.scenesInLocation);
-        hash = 79 * hash + Objects.hashCode(this.itemsInLocation);
-        return hash;
+    public ArrayList<Characters> getCharacters() {
+        return characters;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Location other = (Location) obj;
-        if (!Objects.equals(this.locationName, other.locationName)) {
-            return false;
-        }
-        if (!Objects.equals(this.scenesInLocation, other.scenesInLocation)) {
-            return false;
-        }
-        if (!Objects.equals(this.itemsInLocation, other.itemsInLocation)) {
-            return false;
-        }
-        return true;
+    public void setCharacters(ArrayList<Characters> characters) {
+        this.characters = characters;
     }
-    
-    
     
     
 }
+ 
