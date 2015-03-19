@@ -13,7 +13,7 @@ import byui.cit260.vikingQuest.view.StartProgramView;
 import byui.cit260.vikingQuest.model.Backpack;
 import byui.cit260.vikingQuest.model.Characters;
 import byui.cit260.vikingQuest.model.Game;
-import byui.cit260.vikingQuest.model.Items;
+import byui.cit260.vikingQuest.model.InventoryItem;
 import byui.cit260.vikingQuest.model.Location;
 import byui.cit260.vikingQuest.model.Map;
 import byui.cit260.vikingQuest.model.Player;

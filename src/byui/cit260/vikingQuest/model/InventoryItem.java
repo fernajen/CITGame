@@ -5,7 +5,6 @@ package byui.cit260.vikingQuest.model;
 
 import java.io.Serializable;
 import java.util.Objects;
-import static jdk.nashorn.internal.objects.NativeJava.type;
 
 /**
  *

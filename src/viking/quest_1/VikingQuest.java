@@ -9,7 +9,7 @@ package viking.quest_1;
  *
  * @author Jenny
  */
-public class VikingQuest_1 {
+public class VikingQuest {
 
     /**
      * @param args the command line arguments
