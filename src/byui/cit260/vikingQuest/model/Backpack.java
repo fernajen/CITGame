@@ -1,9 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package byui.cit260.vikingQuest.model;
+
+   package byui.cit260.vikingQuest.model;
 import java.io.Serializable;
 
 /**
@@ -13,55 +9,17 @@ import java.io.Serializable;
 
 
 public class Backpack implements Serializable{
-    
-    // Class instance Variables
-    private double totalNumItems;
-    
-    // Default Constructor
 
+    private String type;
+    private long quantity;
+    private double requiredAmount;
+    
     public Backpack() {
+        this.type = "\n This backpack you carry throughout"
+                + "\n your journy to collect items needed to reach"
+                + "\n the treasure. There is a limit. Be careful"
+                + "\n and only add what you need.";
+        this.quantity = 0;
+        this.requiredAmount = 10;
     }
-    
-    
-    // Getter and Setter
-    public double getTotalNumItems() {
-        return totalNumItems;
-    }
-
-    public void setTotalNumItems(double totalNumItems) {
-        this.totalNumItems = totalNumItems;
-    }
-    
-    //toString equals and hashCode
-    @Override
-    public String toString() {
-        return "Backpack{" + "totalNumItems=" + totalNumItems + '}';
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 13 * hash + (int) (Double.doubleToLongBits(this.totalNumItems) ^ (Double.doubleToLongBits(this.totalNumItems) >>> 32));
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Backpack other = (Backpack) obj;
-        if (Double.doubleToLongBits(this.totalNumItems) != Double.doubleToLongBits(other.totalNumItems)) {
-            return false;
-        }
-        return true;
-    }
-    
-    
-    
 }
-
-
