@@ -1,78 +1,85 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package byui.cit260.vikingQuest.view;
-
+package byui.cit260.vikingQuest.model;
+import java.io.Serializable;
+import java.util.Objects;
 /**
  *
- * @author Amy
+ * @author Amy Jennifer Ivy
  */
-public class GameHelpMenu extends View{
-        
-    //Game Menu
-    public GameHelpMenu(){
-        super("\n"
-            + "\n---------------------"
-            + "\n|     Help Menu     |"
-            + "\n---------------------"
-            + "\nR - Read Letter"
-            + "\nH - Hint"
-            + "\nQ - Quit Game Help"
-            + "\n---------------------");
-    }
+public class Skills implements Serializable{
     
-    @Override
-    public void doAction(Object obj) {
-        
-        String value = (String)obj;
-        
-        value = value.toUpperCase(); // convert all input to uppercase
-        char choice = value.charAt(0); // get first character
-        
-        switch (choice) {
-            case 'R': // Read letter
-                this.readLetter();
-                break;
-            case 'H': // Hint
-                this.hint();
-                break;
-            case 'Q': // Exit to Main Menu
-                this.returnToGameMenu();
-                return;
-            default:
-                System.out.println("\n*** Invalid Selection *** Try Again");
-                break;
-        }
-    }
+    // Class instance variables
+    private String skillName;
+    private String abilityDefinition;
+    private String weaknesses;
     
+    // Default Constructor
+    public Skills() {
+    }   
     
-    public void viewMap() {
-        
-        //Display the game menu
-        MapMenuView mapMenu = new MapMenuView();
-        mapMenu.display();
+    // Getter and Setter
+    public String getSkillName() {
+        return skillName;
     }
-    
-    private void readLetter() {
-        
-        //Placeholder mark begining of function call
-        System.out.println("*** readLetter() function called ***");
-        
-    }
-    
-    private void hint() {
-        
-        System.out.println("*** hint() function called ***");
-    }
-   
-    private void returnToGameMenu() {
-        
-        //Display the game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.display();
 
-    } 
+    public void setSkillName(String skillName) {
+        this.skillName = skillName;
+    }
+
+    public String getAbilityDefinition() {
+        return abilityDefinition;
+    }
+
+    public void setAbilityDefinition(String abilityDefinition) {
+        this.abilityDefinition = abilityDefinition;
+    }
+
+    public String getWeaknesses() {
+        return weaknesses;
+    }
+
+    public void setWeaknesses(String weaknesses) {
+        this.weaknesses = weaknesses;
+    }
+    
+    //toString equals and HashCode
+    @Override
+    public String toString() {
+        return "Skills{" + "skillName=" + skillName + ", abilityDefinition=" + abilityDefinition + ", weaknesses=" + weaknesses + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 97 * hash + Objects.hashCode(this.skillName);
+        hash = 97 * hash + Objects.hashCode(this.abilityDefinition);
+        hash = 97 * hash + Objects.hashCode(this.weaknesses);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Skills other = (Skills) obj;
+        if (!Objects.equals(this.skillName, other.skillName)) {
+            return false;
+        }
+        if (!Objects.equals(this.abilityDefinition, other.abilityDefinition)) {
+            return false;
+        }
+        if (!Objects.equals(this.weaknesses, other.weaknesses)) {
+            return false;
+        }
+        return true;
+    }
+    
+    
+    
+    
 }
+
 
