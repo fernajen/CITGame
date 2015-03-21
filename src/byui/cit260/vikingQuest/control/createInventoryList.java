@@ -2,7 +2,10 @@ package byui.cit260.vikingQuest.control;
 
 //import com.sun.org.apache.bcel.internal.Constants;
 
+import byui.cit260.vikingQuest.exceptions.CreateInventoryListExceptions;
 import byui.cit260.vikingQuest.model.InventoryItem;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import vikingquest.VikingQuest;
 
 
@@ -36,6 +39,19 @@ public class createInventoryList {
         inventory[Item.gold.ordinal()] = gold;
         
         return inventory;
+    }
+    if(InventoryItem[0]<0 || InventoryItem[1]<0){
+        try {
+            throw new CreateInventoryListExceptions("You cannot have less than 0 of any item!");
+        } catch (CreateInventoryListExceptions ex) {
+            Logger.getLogger(createInventoryList.class.getName()).log(Level.SEVERE, null, ex);
+        }
+}
+    private static class Constants {
+        private static int NUMBER_OF_INVENTORY_ITEMS;
+
+        public Constants() {
+        }
     }
     
     public enum Item {     // enums are like arrays... but doesn't save any info with it.

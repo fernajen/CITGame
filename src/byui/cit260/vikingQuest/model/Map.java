@@ -20,6 +20,7 @@ public class Map implements Serializable{
     private int noOfRows;
     private int noOfColums;
     private Location[][] locations;
+    public int getNoOfColumns;
     
     public Map(){
     }
@@ -65,6 +66,10 @@ public class Map implements Serializable{
     }
 
     public Location[][] getLocations() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public int getNoOfRows() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
