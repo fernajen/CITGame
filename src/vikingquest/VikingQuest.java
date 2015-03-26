@@ -19,6 +19,11 @@ import byui.cit260.vikingQuest.model.Map;
 import byui.cit260.vikingQuest.model.Player;
 import byui.cit260.vikingQuest.model.Scene;
 import byui.cit260.vikingQuest.model.Skills;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import sun.util.logging.PlatformLogger;
 
 
 /**
@@ -33,8 +38,10 @@ public class VikingQuest {
     //Class instance Variables
     private static Game currentGame = null;
     private static Player player = null;
-    
-    //Getter and Setter functions
+     
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
+
     public static Game getCurrentGame() {
         return currentGame;
     }
@@ -50,18 +57,72 @@ public class VikingQuest {
     public static void setPlayer(Player player) {
         VikingQuest.player = player;
     }
+
+    public static PrintWriter getOutFile() {
+        return outFile;
+    }
+
+    public static void setOutFile(PrintWriter outFile) {
+        VikingQuest.outFile = outFile;
+    }
+
+    public static BufferedReader getInFile() {
+        return inFile;
+    }
+
+    public static void setInFile(BufferedReader inFile) {
+        VikingQuest.inFile = inFile;
+    }
+
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
+
+    public static void setLogFile(PrintWriter logFile) {
+        VikingQuest.logFile = logFile;
+    }
+     
+    private static PrintWriter logFile = null;
     
-    
-    
-    public static void main(String[] args) {
-         
-        // Start program view layer
+    public static void main(String[] args){
         StartProgramView startProgramView = new StartProgramView();
-        startProgramView.startProgram();
+    startProgramView.startProgram();
+        try {
+            //open character stream files for end user input and output
+            VikingQuest.inFile =
+                    new BufferedReader(new InputStreamReader(System.in));
+            VikingQuest.outFile = new PrintWriter(System.out, true);
+                  
+            //open logfile
+            String filePath = "logFile.txt";
+            VikingQuest.logFile = new PrintWriter(filePath);
+           // VikingQuest.logFile = new PrintWriter(filePath);
+    } catch (Exception e){
+        System.out.println("Exception: " + e.toString() +
+               "\nCause: " + e.getCause() +
+                "\nMessage: " + e.getMessage());
         
-    } 
-    
+    } finally {
+            try{
+            if (VikingQuest.inFile != null)
+            VikingQuest.inFile.close();
+            
+            if (VikingQuest.outFile != null)
+            VikingQuest.outFile.close();
+            
+            if (VikingQuest.logFile != null)
+            VikingQuest.logFile.close();
+            } catch (IOException ex) {
+               System.out.println("Error in closing files");
+                return;
+                
+            }
+        }
+    }
+           
 }
+
+       
 /************************
  * I edited these out for now
  * Page 6 of the Lesson 6 Team Assignment doc 

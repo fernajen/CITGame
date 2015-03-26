@@ -61,7 +61,8 @@ public class GameMenuView extends View{
                 this.returnToMain();
                 return;
             default:
-                System.out.println("\n*** Invalid Selection *** Try Again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid Selection *** Try Again");
                 break;
         }
     }
@@ -75,59 +76,36 @@ public class GameMenuView extends View{
     
     private void viewBackpack() {
         // Get the sorted list of inventory items for the current game
-        Item[] inventory = GameControl.getSortedInventoryList();
+        InventoryItem[] inventory = GameControl.getSortedInventoryList();
         
-        System.out.println("\n List of inventory Items");
-        System.out.println("Description" + "\t" + 
+        this.console.println("\n List of inventory Items");
+        this.console.println("Description" + "\t" + 
                             "Required" + "\t" +
                             "In Stock");
         
         // For each inventory item
-        for (Item inventoryItem : inventory){
+        for (InventoryItem inventoryItem : inventory){
             // Display the description, the required amount and amount in stock
-            System.out.println(InventoryItem.getType + "\t   " +
+          this.console.println(InventoryItem.getType + "\t   " +
                                 InventoryItem.requiredAmount + "\t   " +
                                 InventoryItem.getQuantity);
         }
         
     }
     
-    public static InventoryItem[] getSortedInventoryList(){
-        
-        // Get inventory list for the current game
-        InventoryItem[] originalInventoryList = 
-                        VikingQuest.getCurrentGame().getItems();
-        // Clone (make a copy) origionalList
-        InventoryItem[] inventoryList = originalInventoryList.clone();
-    
-        // Using a BubbleSort to sort the list of inventoryList by name
-        Item tempInventoryItem;
-        for (int i=0; i<inventoryList.length-1; i++){
-            for (int j=0; j<inventoryList.length-1-i; j++){
-                if (inventoryList[j].getType().
-                          compareToIgnoreCase(inventoryList[j + 1].getType()) > 0){
-                    tempItem = inventoryList[j];
-                    inventoryList[j] = inventoryList[j+1];
-                    inventoryList[j+1] = tempItem;
-                }
-            }
-        }
-        return inventoryList;   
-    }
-    
     private void talk() {
         
-        System.out.println("*** talk() function called ***");
+        this.console.println("*** talk() function called ***");
     }
     
     private void giveItem() {
         
-        System.out.println("*** giveItem()displayHelpMenu function called ***");
+        this.console.println("*** giveItem()displayHelpMenu function called ***");
     } 
     
     private void itemRecieved() {
         
-        System.out.println("*** itemRecieved()displayHelpMenu function called ***");
+        this.console.println("*** itemRecieved()displayHelpMenu function called ***");
     } 
     
     private void displayHelpMenu(){   
@@ -145,6 +123,16 @@ public class GameMenuView extends View{
     @Override
     public void doAction(Object obj) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private static class GameHelpMenu {
+
+        public GameHelpMenu() {
+        }
+
+        private void display() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
     }
 
 }

@@ -5,12 +5,15 @@
  */
 package byui.cit260.vikingQuest.control;
 
+import byui.cit260.vikingQuest.exceptions.CreateInventoryListExceptions;
 import byui.cit260.vikingQuest.model.Backpack;
 import byui.cit260.vikingQuest.model.Game;
 import byui.cit260.vikingQuest.model.Map;
 import byui.cit260.vikingQuest.model.Player;
 import byui.cit260.vikingQuest.model.Scene;
 import byui.cit260.vikingQuest.model.InventoryItem;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import vikingquest.VikingQuest;
 
 
@@ -49,10 +52,33 @@ public class GameControl {
     }
 
     
-    public static InventoryItem[] createInventoryList(){
-        System.out.println("*** called create inventory list() in Game Control ***");
-        return null;
+   public static InventoryItem[] createInventoryList(){
+    // create array(list) of inventory items
+        InventoryItem[] inventory =
+                new InventoryItem[createInventoryList.Constants.NUMBER_OF_INVENTORY_ITEMS];
+        
+
+        InventoryItem shovel = new InventoryItem();
+        shovel.setType("Shovel");
+        shovel.setQuantity(0);
+        shovel.setRequiredAmount(0);
+        inventory[createInventoryList.Item.shovel.ordinal()] = shovel;
+
+        InventoryItem gold = new InventoryItem();
+        gold.setType("gold");
+        gold.setQuantity(0);
+        gold.setRequiredAmount(0);
+        inventory[createInventoryList.Item.gold.ordinal()] = gold;
+        
+        return inventory;
     }
+    /*if(InventoryItem[0]<0 || InventoryItem[1]<0){
+        try {
+            throw new CreateInventoryListExceptions("You cannot have less than 0 of any item!");
+        } catch (CreateInventoryListExceptions ex) {
+            Logger.getLogger(createInventoryList.class.getName()).log(Level.SEVERE, null, ex);
+        }
+}*/
     
     public static void moveActorsToStartingLocation(Map map){
         System.out.println("*** called moveActorsToStartingLocation***");
@@ -62,9 +88,29 @@ public class GameControl {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public static createInventoryList.Item[] getSortedInventoryList() {
-        System.out.println("Write inventory item list here according to lesson 9 team instructions - Brother Jackson");
-        return null;
+    public static InventoryItem[] getSortedInventoryList(){
+        
+        // Get inventory list for the current game
+        InventoryItem[] originalInventoryList = 
+                        VikingQuest.getCurrentGame().getItems();
+        
+        // Clone (make a copy) origionalList
+       InventoryItem[] inventoryList = originalInventoryList.clone();
+       return inventoryList; 
     }
-
 }
+    
+        // Using a BubbleSort to sort the list of inventoryList by name
+       /* Item tempInventoryItem;
+        for (int i=0; i<inventoryList.length-1; i++){
+            for (int j=0; j<inventoryList.length-1-i; j++){
+                if (inventoryList[j].getType().
+                          compareToIgnoreCase(inventoryList[j + 1].getType()) > 0){
+                    tempItem = inventoryList[j];
+                    inventoryList[j] = inventoryList[j+1];
+                    inventoryList[j+1] = tempItem;
+                }
+            }
+        }*/
+          
+    

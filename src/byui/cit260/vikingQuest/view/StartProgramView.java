@@ -2,7 +2,6 @@
 
 
 package byui.cit260.vikingQuest.view;
-
 import byui.cit260.vikingQuest.control.ProgramControl;
 import byui.cit260.vikingQuest.model.Player;
 import java.util.Scanner;
@@ -32,7 +31,7 @@ public class StartProgramView {
             this.displayWelcomeMessage(player);
             
             //Display the Main Menu
-            MainMenuView mainMenuView= new MainMenuView();
+            MainMenuView mainMenuView = new MainMenuView();
             mainMenuView.display();
     }
     private void displayBanner(){
@@ -55,7 +54,7 @@ public class StartProgramView {
                 
                 //if the name is invalid (less than 2 char in length)
                 if(playersName.length()<2){
-                    System.out.println("Invalid name - The name must not be blank.");
+                    ErrorView.display(this.getClass().getName(),"Invalid name - The name must not be blank.");
                     continue; // and repeat again
                    
                 }

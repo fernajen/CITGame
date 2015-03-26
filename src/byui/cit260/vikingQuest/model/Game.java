@@ -15,9 +15,7 @@ import java.io.Serializable;
  */
 public class Game implements Serializable {
 
-    public static void createNewGame(Player player) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+ 
     
     // Class instance variables
     private double totalTime;

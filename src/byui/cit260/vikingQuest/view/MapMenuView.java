@@ -65,7 +65,8 @@ public class MapMenuView extends View{
                 this.displayGameMenu();
                 return;
             default:
-                System.out.println("\n*** Invalid Selection *** Try Again");
+               ErrorView.display(this.getClass().getName(),
+                       "\n*** Invalid Selection *** Try Again");
                 break;
         }
     }
@@ -73,52 +74,52 @@ public class MapMenuView extends View{
     private void goToTemple() {
         
         //Placeholder Comment
-        System.out.println("*** goToTemple() function is called ***");
+        this.console.println("*** goToTemple() function is called ***");
         
     }
     
     private void goToRuins() {
         
         //Placeholder Comment
-        System.out.println("*** goToRuins() function is called ***");
+        this.console.println("*** goToRuins() function is called ***");
         
     }
     
     private void goToVikingMound() {
         
         //Placeholder Comment
-        System.out.println("*** goToVikingMound function is called ***");
+        this.console.println("*** goToVikingMound function is called ***");
         
     }
     
     private void goToMountains() {
         
         //Placeholder Comment
-        System.out.println("*** goToMountain() function is called ***");
+        this.console.println("*** goToMountain() function is called ***");
         
     }
     
     private void goToStart() {
         
         //Placeholder Comment
-        System.out.println("*** goToStart() function is called ***");
+        this.console.println("*** goToStart() function is called ***");
         
     }
     
     private void goToBeachTown(){
         
-        System.out.println("***goTOBeachTown() function called***");
+        this.console.println("***goTOBeachTown() function called***");
     }
     
     private void goToHut(){
         
-        System.out.println("***goToHut() function called***");
+        this.console.println("***goToHut() function called***");
     }
     
     private void goToJungle() {
         
         //Placeholder Comment
-        System.out.println("*** goToJungle() function is called ***");
+        this.console.println("*** goToJungle() function is called ***");
         
     }
 

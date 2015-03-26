@@ -16,39 +16,11 @@ import vikingquest.VikingQuest;
 
 public class createInventoryList {
     // private static Object Constants;
-    private static int NUMBER_OF_INVENTORY_ITEMS;
-    private static InventoryItem[] inventory;
+    public static int NUMBER_OF_INVENTORY_ITEMS;
+    public static InventoryItem[] inventory;
     
-    
-    public static InventoryItem[] createInventoryList(){
-    // create array(list) of inventory items
-        InventoryItem[] inventory =
-                new InventoryItem[Constants.NUMBER_OF_INVENTORY_ITEMS];
-        
-
-        InventoryItem shovel = new InventoryItem();
-        shovel.setType("Shovel");
-        shovel.setQuantity(0);
-        shovel.setRequiredAmount(0);
-        inventory[Item.shovel.ordinal()] = shovel;
-
-        InventoryItem gold = new InventoryItem();
-        gold.setType("gold");
-        gold.setQuantity(0);
-        gold.setRequiredAmount(0);
-        inventory[Item.gold.ordinal()] = gold;
-        
-        return inventory;
-    }
-    if(InventoryItem[0]<0 || InventoryItem[1]<0){
-        try {
-            throw new CreateInventoryListExceptions("You cannot have less than 0 of any item!");
-        } catch (CreateInventoryListExceptions ex) {
-            Logger.getLogger(createInventoryList.class.getName()).log(Level.SEVERE, null, ex);
-        }
-}
-    private static class Constants {
-        private static int NUMBER_OF_INVENTORY_ITEMS;
+    public static class Constants {
+        public static int NUMBER_OF_INVENTORY_ITEMS;
 
         public Constants() {
         }

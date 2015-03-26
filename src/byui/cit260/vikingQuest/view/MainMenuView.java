@@ -1,6 +1,10 @@
 package byui.cit260.vikingQuest.view;
 
+import byui.cit260.vikingQuest.control.GameControl;
+import byui.cit260.vikingQuest.control.MapControl;
 import byui.cit260.vikingQuest.model.Game;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import vikingquest.VikingQuest;
 
 /**
@@ -44,21 +48,26 @@ public class MainMenuView extends View{
                 this.displayHelpMenu();
                 break;
             case 'E': // Exit Program
-                System.out.println("Exit called");
+                this.console.println("Exit called");
                 break;
             case 'S': // Save Game
-                System.out.println("Save Game called");
+                this.console.println("Save Game called");
                 this.saveGame();
                 break;
             default:
-                System.out.println("\n*** Invalid Selection *** Try Again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid Selection *** Try Again");
                 break;
         }
     }
 
      private void startNewGame() {
-        // Create New Game
-        Game.createNewGame(VikingQuest.getPlayer());
+        try {
+            // Create New Game
+            GameControl.createNewGame(VikingQuest.getPlayer());
+        } catch (MapControl.MapControlException ex) {
+            Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }
         //Display the game menu
         GameMenuView gameMenuView = new GameMenuView();
         gameMenuView.display();
