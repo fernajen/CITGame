@@ -6,6 +6,7 @@
 package byui.cit260.vikingQuest.control;
 
 import byui.cit260.vikingQuest.exceptions.CreateInventoryListExceptions;
+import byui.cit260.vikingQuest.exceptions.GameControlException;
 import byui.cit260.vikingQuest.model.Backpack;
 import byui.cit260.vikingQuest.model.Game;
 import byui.cit260.vikingQuest.model.Map;
@@ -98,7 +99,26 @@ public class GameControl {
        InventoryItem[] inventoryList = originalInventoryList.clone();
        return inventoryList; 
     }
-}
+    public static void saveGame(Game game, String filepath)
+            throws GameControlException {
+        Game game = null;
+        try( FileOutputStream fips = new FileOutputStream(filepath)){
+         ObjectInputStream output = new ObjectInnputStream(fips);
+         
+         game = (Game) output.readObject();
+        }
+        catch(fileNotFoundException fnfe) {
+        throw new GameControlException(fnfe.getMessage())
+        }
+        }
+        catch(IOException e) {
+         throw new GameControlException(e.getMessage());   
+        
+        }
+        VikingQuest.setCurrentGame(game); //save in viking quest
+    }
+
+
     
         // Using a BubbleSort to sort the list of inventoryList by name
        /* Item tempInventoryItem;

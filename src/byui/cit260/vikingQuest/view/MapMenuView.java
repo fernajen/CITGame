@@ -124,11 +124,11 @@ public class MapMenuView extends View{
     }
 
     private void displayGameMenu() { // Quit
-        //Display the game menu
+       // Display the game menu
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
         
-    }
+   }
 
 }
     

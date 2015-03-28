@@ -62,6 +62,16 @@ public class MainMenuView extends View{
     }
 
      private void startNewGame() {
+         System.out.println("\n\nEnter the file path for file where the game"
+         + "is to be saved");
+         String filePath = this.getInput();
+         try {
+             // save game in a speficed file
+             GameControl.saveGame(filePath);
+         }catch (Exception ex){
+            ErrorView.display("MainMenuView", ex.getMessage());
+         }
+     }
         try {
             // Create New Game
             GameControl.createNewGame(VikingQuest.getPlayer());
