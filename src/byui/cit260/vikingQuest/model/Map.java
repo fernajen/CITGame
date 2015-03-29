@@ -6,10 +6,11 @@
 package byui.cit260.vikingQuest.model;
 import byui.cit260.vikingQuest.control.GameControl;
 import java.io.Serializable;
+import vikingquest.VikingQuest;
 /**
  *
  * @author Amy
- */
+ */ 
 public class Map implements Serializable{
 
     private static Scene[] createScenes() {

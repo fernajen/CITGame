@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.vikingQuest.view;
+import vikingquest.VikingQuest;
 
 /**
  *
