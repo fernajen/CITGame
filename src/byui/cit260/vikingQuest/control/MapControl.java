@@ -41,11 +41,11 @@ public class MapControl {
      
         }
 
-        public static CreateScenes.ImageIcon getImage(Scene finishScene, String citbyuicit260vikingquestimagesfinishjpg) {
+       public static CreateScenes.ImageIcon getImage(Scene finishScene, String "citbyuicit260vikingquestimagesfinishjpg") {
             throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
+       }
 
-    public static class MapControlException extends Exception {
+   public static class MapControlException extends Exception {
 
         public MapControlException() {
         }
